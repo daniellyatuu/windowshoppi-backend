@@ -19,18 +19,21 @@ class RegistrationSerializer(serializers.ModelSerializer):
         model = User
         # fields = ['first_name', 'last_name', 'username', 'password', 'confirm_password', 'email', 'country', 'group', 'user_bussiness']
         fields = ['username', 'password', 'confirm_password', 'email', 'country', 'group', 'user_bussiness']
-        validators = [
-            UniqueTogetherValidator(
-                queryset=User.objects.all(),
-                fields=['username']
-            )
-        ]
+        # validators = [
+        #     UniqueTogetherValidator(
+        #         queryset=User.objects.all(),
+        #         fields=['email']
+        #     )
+        # ]
         extra_kwargs = {
             'password': {'write_only': True}
         }
 
     def create(self, validated_data):
         bussiness_data = validated_data.pop('user_bussiness')
+        
+        if User.objects.filter(email=self.validated_data['email']).exists():
+            raise serializers.ValidationError({"email": "user with this email already exists"})
         
         # save user
         windowshoppi_user = User(
