@@ -5,7 +5,6 @@ from rest_framework.permissions import IsAuthenticated
 from app.master_data.models import Country, Category
 from rest_framework.authtoken.models import Token
 from .serializers import RegistrationSerializer
-from django.shortcuts import get_object_or_404
 from django.contrib.auth.models import Group
 from rest_framework.response import Response
 from rest_framework import status, generics

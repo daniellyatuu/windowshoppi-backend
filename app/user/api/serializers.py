@@ -1,5 +1,4 @@
 from rest_framework import serializers
-from rest_framework.validators import UniqueTogetherValidator
 from app.user.models import User, Contact
 from app.bussiness.models import Bussiness
 
