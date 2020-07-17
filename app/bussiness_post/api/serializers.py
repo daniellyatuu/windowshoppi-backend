@@ -32,12 +32,18 @@ class CreatePostSerializer(serializers.ModelSerializer):
 class PostImageSerializer(serializers.ModelSerializer):
     class Meta:
         model = PostImage
-        fields = ['post','filename']
+        fields = ['filename']
 
 
 class BussinessPostSerializer(serializers.ModelSerializer):
     post_photos = PostImageSerializer(many=True)
+    account_name = serializers.CharField(source='bussiness.name')
+    business_location = serializers.CharField(source='bussiness.location_name')
+    account_profile = serializers.CharField(source='bussiness.profile_image')
+    call_number = serializers.CharField(source='bussiness.user.call_phone_number')
+    whatsapp_number = serializers.CharField(source='bussiness.user.whatsapp_phone_number')
+    # url = serializers.HyperlinkedIdentityField(view_name='bussiness_post:post_image')
 
     class Meta:
         model = BussinessPost
-        fields = ['id', 'caption', 'date_posted', 'date_modified', 'post_photos']
+        fields = ['id', 'bussiness', 'account_profile', 'account_name', 'call_number', 'whatsapp_number', 'business_location', 'caption', 'post_photos']

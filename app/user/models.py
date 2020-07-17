@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import (AbstractBaseUser, BaseUserManager)
 from django.contrib.auth.models import Group
-from app.master_data.models import Country, Category
+from app.master_data.models import Category
 from django.core.validators import RegexValidator
 from django.conf import settings
 from django.db.models.signals import post_save
@@ -51,7 +51,6 @@ class User(AbstractBaseUser):
     username = models.CharField(max_length=255, unique=True)
     email = models.EmailField(max_length=255, blank=True, null=True)
     group = models.ForeignKey(Group, on_delete=models.CASCADE, blank=True, null=True)
-    country = models.ForeignKey(Country, on_delete=models.CASCADE, blank=True, null=True)
     superuser = models.BooleanField(default=False)  # super user
     staff = models.BooleanField(default=False)  # staff user non superuser
     active = models.BooleanField(default=True)  # can login
@@ -87,6 +86,14 @@ class User(AbstractBaseUser):
     @property
     def is_active(self):
         return self.active
+
+    def call_phone_number(self):
+        user_contact = self.phone_numbers.all()[0]
+        return user_contact.call
+
+    def whatsapp_phone_number(self):
+        user_contact = self.phone_numbers.all()[0]
+        return user_contact.whatsapp
 
     class Meta:
         ordering = ['-id']
