@@ -4,7 +4,7 @@ from rest_framework.pagination import PageNumberPagination
 from rest_framework.permissions import IsAuthenticated
 from app.master_data.models import Country, Category
 from rest_framework.authtoken.models import Token
-from .serializers import RegistrationSerializer
+from .serializers import RegistrationSerializer, UserSerializer
 from django.contrib.auth.models import Group
 from rest_framework.response import Response
 from rest_framework import status, generics
@@ -34,7 +34,7 @@ class RegisterVendor(APIView):
 
 class UserList(generics.ListAPIView):
     queryset = User.objects.all()
-    serializer_class = RegistrationSerializer
+    serializer_class = UserSerializer
     authentication_classes = [TokenAuthentication]
     permission_classes = [IsAuthenticated, IsExcAdminOrAdmin]
     pagination_class = PageNumberPagination

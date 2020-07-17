@@ -5,16 +5,17 @@ from rest_framework.authtoken.models import Token
 from rest_framework.response import Response
 from rest_framework import status, generics
 from rest_framework.views import APIView
-from .serializers import CreatePostSerializer, BussinessPostSerializer
+from .serializers import CreatePostSerializer, BussinessPostSerializer, PostImageSerializer
 from app.user.models import User
 from app.bussiness.models import Bussiness
-from app.bussiness_post.models import BussinessPost
+from app.bussiness_post.models import BussinessPost, PostImage
 from rest_framework.parsers import MultiPartParser, FormParser
+from windowshoppi.api_permissions.permissions import IsAllowedToPost, IsBussinessBelongToMe
 
 
 class CreatePostView(APIView):
     authentication_classes = [TokenAuthentication]
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated, IsAllowedToPost, IsBussinessBelongToMe]
     parser_classes = (MultiPartParser, FormParser)
 
 
@@ -49,9 +50,17 @@ class CreatePostView(APIView):
 class AllPost(generics.ListAPIView):
     queryset = BussinessPost.objects.filter(active=True)
     serializer_class = BussinessPostSerializer
-    authentication_classes = [TokenAuthentication]
-    permission_classes = [IsAuthenticated]
+    # authentication_classes = [TokenAuthentication]
+    # permission_classes = [IsAuthenticated]
     pagination_class = PageNumberPagination
+
+
+# class PostPhoto(generics.RetrieveAPIView):
+#     queryset = PostImage.objects.all()
+#     serializer_class = PostImageSerializer
+#     # authentication_classes = [TokenAuthentication]
+#     # permission_classes = [IsAuthenticated]
+#     pagination_class = PageNumberPagination
 
 
 class VendorPost(generics.ListAPIView):
