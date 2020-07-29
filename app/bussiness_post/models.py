@@ -4,7 +4,8 @@ from app.master_data.models import Category
 
 
 class BussinessPost(models.Model):
-    bussiness = models.ForeignKey(Bussiness, related_name='bussiness_posts', on_delete=models.CASCADE)
+    bussiness = models.ForeignKey(
+        Bussiness, related_name='bussiness_posts', on_delete=models.CASCADE)
     categories = models.ManyToManyField(Category)
     caption = models.TextField()
     active = models.BooleanField(default=True)
@@ -16,5 +17,6 @@ class BussinessPost(models.Model):
 
 
 class PostImage(models.Model):
-    post = models.ForeignKey(BussinessPost, related_name='post_photos', on_delete=models.CASCADE)
+    post = models.ForeignKey(
+        BussinessPost, related_name='post_photos', on_delete=models.CASCADE)
     filename = models.ImageField(upload_to='post_pics')
