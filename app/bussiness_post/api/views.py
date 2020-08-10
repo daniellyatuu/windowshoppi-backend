@@ -12,6 +12,7 @@ from app.bussiness_post.models import BussinessPost, PostImage
 from rest_framework.parsers import MultiPartParser, FormParser
 from rest_framework.exceptions import ValidationError
 from windowshoppi.api_permissions.permissions import IsAllowedToPost, IsBussinessBelongToMe
+from PIL import Image, ImageDraw, ImageFont
 
 
 class CreatePostView(APIView):
@@ -21,6 +22,7 @@ class CreatePostView(APIView):
     parser_classes = (MultiPartParser, FormParser)
 
     def post(self, request, format=None):
+
         feedback = {}
         data = self.request.data
 
@@ -40,10 +42,7 @@ class CreatePostView(APIView):
 
         if serializer.is_valid():
             windowshoppi_post = serializer.save()
-
-            feedback['response'] = 'post created successfully'
-            feedback['id'] = windowshoppi_post.id
-
+            feedback = 'success'
             return Response(feedback, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
@@ -84,10 +83,14 @@ class VendorPost(generics.ListAPIView):
     serializer_class = BussinessPostSerializer
     authentication_classes = [TokenAuthentication]
     permission_classes = [IsAuthenticated]
-    pagination_class = StandardResultsSetPagination
+    pagination_class = MediumResultsSetPagination
 
     def get_queryset(self):
         # get user active bussiness
+
+        # user1 = self.request.user
+        # data = user1.user_bussiness.all()[0]
+        # print(data)
         bussiness = Bussiness.objects.filter(user=self.request.user)[0]
 
         pk = bussiness.id
@@ -111,3 +114,38 @@ class SearchPost(generics.ListAPIView):
         else:
             raise ValidationError(
                 detail="keyword is required")
+
+
+class SearchPostByCategory(generics.ListAPIView):
+    serializer_class = BussinessPostSerializer
+    # authentication_classes = [TokenAuthentication]
+    # permission_classes = [IsAuthenticated]
+    pagination_class = StandardResultsSetPagination
+
+    def get_queryset(self):
+        countryid = self.request.query_params.get('country', '')
+        # categoryid = self.request.query_params.get('id', '')
+        categoryid = self.kwargs['pk']
+
+        print(categoryid)
+        print(type(categoryid))
+
+        categoryid = int(categoryid)
+
+        queryset = BussinessPost.objects.filter(
+            active=True, bussiness__category_id=categoryid, bussiness__country_id=countryid)
+        return queryset
+
+
+# class InsertTextToImage(APIView):
+#     def get(self, request, format=None):
+#         image = Image.open('media/post_pics/image_1_1596722055119.jpg')
+#         draw = ImageDraw.Draw(image)
+#         points = 100, 100
+#         string = "from windowshoppi.com"
+#         font1 = ImageFont.truetype('arial.ttf', 50)
+#         draw.text(points, string, 'white', font=font1)
+
+#         print(image)
+#         image.show()
+#         return Response('start inserting')

@@ -12,6 +12,7 @@ from rest_framework.authtoken.models import Token
 # extend User model .start
 ###########################################################################
 
+
 class UserManager(BaseUserManager):
     def create_user(self, username, password=None):
         if not username:
@@ -50,15 +51,14 @@ class User(AbstractBaseUser):
     last_name = models.CharField(max_length=255, blank=True, null=True)
     username = models.CharField(max_length=255, unique=True)
     email = models.EmailField(max_length=255, blank=True, null=True)
-    group = models.ForeignKey(Group, on_delete=models.CASCADE, blank=True, null=True)
+    group = models.ForeignKey(
+        Group, on_delete=models.CASCADE, blank=True, null=True)
     superuser = models.BooleanField(default=False)  # super user
     staff = models.BooleanField(default=False)  # staff user non superuser
     active = models.BooleanField(default=True)  # can login
     date_joined = models.DateTimeField(auto_now_add=True)
-
-
-    USERNAME_FIELD = 'username' # username field
-    REQUIRED_FIELDS = [] # Username & Password are required by default.
+    USERNAME_FIELD = 'username'  # username field
+    REQUIRED_FIELDS = []  # Username & Password are required by default.
 
     objects = UserManager()
 
@@ -102,6 +102,7 @@ class User(AbstractBaseUser):
 # extend User model ./end
 ###########################################################################
 
+
 @receiver(post_save, sender=settings.AUTH_USER_MODEL)
 def create_auth_token(sender, instance=None, created=False, **kwargs):
     if created:
@@ -109,11 +110,14 @@ def create_auth_token(sender, instance=None, created=False, **kwargs):
 
 
 class Contact(models.Model):
-    phone_regex = RegexValidator(regex=r'^\+?1?\d{9,15}$', message="Phone number must be entered in the format: '+999999999'. Up to 15 digits allowed.")
+    phone_regex = RegexValidator(
+        regex=r'^\+?1?\d{9,15}$', message="Phone number must be entered in the format: '+999999999'. Up to 15 digits allowed.")
 
-    user = models.ForeignKey(User, related_name = "phone_numbers", on_delete=models.CASCADE)
+    user = models.ForeignKey(
+        User, related_name="phone_numbers", on_delete=models.CASCADE)
     call = models.CharField(validators=[phone_regex], max_length=17)
-    whatsapp = models.CharField(validators=[phone_regex], max_length=17, blank=True, null=True)
+    whatsapp = models.CharField(
+        validators=[phone_regex], max_length=17, blank=True, null=True)
     date_added = models.DateTimeField(auto_now_add=True)
     date_modified = models.DateTimeField(auto_now=True)
 
@@ -122,7 +126,8 @@ class Contact(models.Model):
 
 
 class UserLocation(models.Model):
-    user = models.ForeignKey(User, related_name='user_locations', on_delete=models.CASCADE)
+    user = models.ForeignKey(
+        User, related_name='user_locations', on_delete=models.CASCADE)
     location_name = models.CharField(max_length=255)
     lattitude = models.FloatField()
     longitude = models.FloatField()
@@ -132,4 +137,4 @@ class UserLocation(models.Model):
         return self.location_name
 
     class Meta:
-        ordering = ['-id'] 
+        ordering = ['-id']
