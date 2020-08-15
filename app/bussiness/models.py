@@ -11,7 +11,8 @@ class Bussiness(models.Model):
         Category, related_name='bussiness_category', on_delete=models.CASCADE)
     country = models.ForeignKey(Country, on_delete=models.CASCADE)
     profile_image = models.ImageField(
-        upload_to='profile_pics', blank=True, null=True)
+        upload_to='profile_pics_demo', blank=True, null=True)  # upload_to = 'profile_pics'
+    bio = models.TextField(blank=True, null=True)
     location_name = models.CharField(max_length=255)
     lattitude = models.FloatField()
     longitude = models.FloatField()
