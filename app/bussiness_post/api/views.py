@@ -86,21 +86,24 @@ class VendorPost(generics.ListAPIView):
     pagination_class = MediumResultsSetPagination
 
     def get_queryset(self):
-        # get user active bussiness
-
-        # user1 = self.request.user
-        # data = user1.user_bussiness.all()[0]
-        # print(data)
         bussiness = Bussiness.objects.filter(user=self.request.user)[0]
 
         pk = bussiness.id
-        return BussinessPost.objects.filter(bussiness__id=pk, active=True)
+        return BussinessPost.objects.filter(bussiness_id=pk, active=True)
+
+
+class BusinessPost(generics.ListAPIView):
+    serializer_class = BussinessPostSerializer
+    pagination_class = MediumResultsSetPagination
+
+    def get_queryset(self):
+
+        id = self.kwargs['pk']
+        return BussinessPost.objects.filter(bussiness_id=id, active=True)
 
 
 class SearchPost(generics.ListAPIView):
     serializer_class = BussinessPostSerializer
-    # authentication_classes = [TokenAuthentication]
-    # permission_classes = [IsAuthenticated]
     pagination_class = MediumResultsSetPagination
 
     def get_queryset(self):
@@ -118,17 +121,12 @@ class SearchPost(generics.ListAPIView):
 
 class SearchPostByCategory(generics.ListAPIView):
     serializer_class = BussinessPostSerializer
-    # authentication_classes = [TokenAuthentication]
-    # permission_classes = [IsAuthenticated]
+
     pagination_class = StandardResultsSetPagination
 
     def get_queryset(self):
         countryid = self.request.query_params.get('country', '')
-        # categoryid = self.request.query_params.get('id', '')
         categoryid = self.kwargs['pk']
-
-        print(categoryid)
-        print(type(categoryid))
 
         categoryid = int(categoryid)
 

@@ -4,7 +4,9 @@ from app.master_data.models import Category
 import sys
 from PIL import Image
 from io import BytesIO
-from django.core.files.uploadedfile import InMemoryUploadedFile
+from django.core.files import File
+from resizeimage import resizeimage
+# from django.core.files.uploadedfile import InMemoryUploadedFile
 
 
 class BussinessPost(models.Model):
@@ -26,17 +28,19 @@ class PostImage(models.Model):
     filename = models.ImageField(upload_to='post_pics')
 
     # # calling image compression function before saving the data
-    # def save(self, *args, **kwargs):
-    #     print('pass in here')
-    #     # new_image = compress(self.filename)
-    #     # self.filename = new_image
-    #     super().save(*args, **kwargs)
+    def save(self, *args, **kwargs):
+        new_image = self.compress(self.filename)
+        self.filename = new_image
+        super().save(*args, **kwargs)
 
-    # # image compression method
-    # def compress(filename):
-    #     im = Image.open(filename)
-    #     print(im)
-    #     im_io = BytesIO()
-    #     im.save(im_io, 'JPEG', quality=60)
-    #     new_image = File(im_io, name=filename.name)
-    #     return new_image
+    # image compression method
+    def compress(self, filename):
+        im = Image.open(filename)
+
+        max_width = 720
+        if im.size[0] > max_width:
+            im = resizeimage.resize_width(im, max_width)
+        im_io = BytesIO()
+        im.save(im_io, 'JPEG', quality=60)
+        new_image = File(im_io, name=filename.name)
+        return new_image

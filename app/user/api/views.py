@@ -4,7 +4,7 @@ from rest_framework.pagination import PageNumberPagination
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from app.master_data.models import Country, Category
 from rest_framework.authtoken.models import Token
-from .serializers import RegistrationSerializer, UserSerializer, LoginSerializer
+from .serializers import RegistrationSerializer, UserSerializer, LoginSerializer, UpdateAccountSerializer
 from django.contrib.auth.models import Group
 from rest_framework.response import Response
 from rest_framework import status, generics
@@ -76,3 +76,16 @@ class ValidateUsername(APIView):
         username_res['user_exists'] = User.objects.filter(
             username=data['username']).exists()
         return Response(username_res)
+
+
+class UpdateBusinessInfo(APIView):
+    serializer_class = UpdateAccountSerializer
+    authentication_classes = [TokenAuthentication]
+    permission_classes = [IsAuthenticated]
+
+    def post(self, request, format=None):
+        serializer = UpdateAccountSerializer(request.user, data=request.data)
+        if serializer.is_valid():
+            result = serializer.save()
+            return Response(result)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

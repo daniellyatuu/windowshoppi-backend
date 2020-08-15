@@ -22,13 +22,24 @@ class CreatePostSerializer(serializers.ModelSerializer):
         )
 
         # save post images
-        image_list = []
+        # image_list = []
+        # for image in filename:
+        #     # resizedImage = self.compress(image)
+        #     image_list.append(
+        #         PostImage(post=windowshoppi_post, filename=image))
+        # PostImage.objects.bulk_create(image_list)
+
         for image in filename:
-            image_list.append(
-                PostImage(post=windowshoppi_post, filename=image))
-        PostImage.objects.bulk_create(image_list)
+            PostImage.objects.create(post=windowshoppi_post, filename=image)
 
         return windowshoppi_post
+
+    # def compress(self, filename):
+    #     im = Image.open(filename)
+    #     im_io = BytesIO()
+    #     # im.save(im_io, 'JPEG', quality=60)
+    #     # new_image = File(im_io, name=filename.name)
+    #     # return new_image
 
 
 class PostImageSerializer(serializers.ModelSerializer):
@@ -52,3 +63,11 @@ class BussinessPostSerializer(serializers.ModelSerializer):
         model = BussinessPost
         fields = ['id', 'bussiness', 'account_profile', 'account_name', 'call_number',
                   'whatsapp_number', 'business_location', 'caption', 'post_photos']
+
+
+# class SingleBussinessPostSerializer(serializers.ModelSerializer):
+#     post_photos = PostImageSerializer(many=True)
+
+#     class Meta:
+#         model = BussinessPost
+#         fields = ['id', 'caption', 'post_photos']

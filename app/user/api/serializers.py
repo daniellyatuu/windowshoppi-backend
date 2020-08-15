@@ -157,3 +157,63 @@ class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ['id', 'username', 'group', 'user_bussiness', 'phone_numbers']
+
+
+class UpdateAccountSerializer(serializers.ModelSerializer):
+    name = serializers.CharField(max_length=255)
+    call = serializers.CharField(max_length=17, validators=[RegexValidator(
+        regex=r'^\+?1?\d{9,15}$', message="Phone number must be entered in the format: '+999999999'. Up to 15 digits allowed.")])
+    whatsapp = serializers.CharField(max_length=17, validators=[RegexValidator(
+        regex=r'^\+?1?\d{9,15}$', message="Phone number must be entered in the format: '+999999999'. Up to 15 digits allowed.")])
+    bio = serializers.CharField(max_length=5000, allow_blank=True)
+
+    class Meta:
+        model = User
+        fields = ['name', 'call', 'whatsapp', 'email', 'bio']
+
+    def update(self, instance, validated_data):
+        business_name = self.validated_data['name']
+        call_number = self.validated_data['call']
+        whatsapp_number = self.validated_data['whatsapp']
+        email_address = self.validated_data['email']
+        bio = self.validated_data['bio']
+
+        # update User Model
+        instance.email = email_address
+        instance.save()
+
+        # update Contact Model
+
+        formatedcallNumber = self.formatPhoneNumber(
+            instance, call_number)
+
+        formatedWhatsappNumber = self.formatPhoneNumber(
+            instance, whatsapp_number)
+
+        ''' get instance of User contact [0] '''
+        phone_number = instance.phone_numbers.all()[0]
+        phone_number.call = formatedcallNumber
+        phone_number.whatsapp = formatedWhatsappNumber
+        phone_number.save()
+
+        # update Bussiness Model
+        bussiness = instance.user_bussiness.all()[0]
+        bussiness.name = business_name
+        bussiness.bio = bio
+        bussiness.save()
+
+        # return instance
+        return {
+            'response': 'success',
+            'name': bussiness.name,
+            'call': phone_number.call,
+            'whatsapp': phone_number.whatsapp,
+            'email': instance.email,
+            'bio': bussiness.bio,
+        }
+
+    def formatPhoneNumber(self, instance, phoneNumber):
+        country_code = '255'
+        number = phoneNumber[-9:]
+        formatedNumber = country_code+number
+        return formatedNumber
