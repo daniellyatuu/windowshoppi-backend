@@ -86,6 +86,7 @@ class VendorPost(generics.ListAPIView):
     pagination_class = MediumResultsSetPagination
 
     def get_queryset(self):
+        # git pull is working fine
         bussiness = Bussiness.objects.filter(user=self.request.user)[0]
 
         pk = bussiness.id
