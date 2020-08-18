@@ -87,7 +87,6 @@ class VendorPost(generics.ListAPIView):
 
     def get_queryset(self):
         bussiness = Bussiness.objects.filter(user=self.request.user)[0]
-
         pk = bussiness.id
         return BussinessPost.objects.filter(bussiness_id=pk, active=True)
 

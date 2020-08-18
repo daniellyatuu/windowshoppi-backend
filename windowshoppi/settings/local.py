@@ -2,15 +2,15 @@ from .base import *
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', '192.168.1.62', '192.168.43.155']
+ALLOWED_HOSTS = ['3.16.156.245']
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'windowshoppi',
-        'USER': 'root',
-        'PASSWORD': 'Zomper',
-        'HOST': 'localhost',
+        'NAME': 'w_shoppi_db',
+        'USER': 'admin',
+        'PASSWORD': 'AdminOnly2020',
+        'HOST': 'windowshoppi-db.cwn5ckinogze.us-east-2.rds.amazonaws.com',
         'PORT': '3306',
     }
 }
