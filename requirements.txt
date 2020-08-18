@@ -14,6 +14,7 @@ mysqlclient==1.4.6
 Pillow==7.2.0
 pycodestyle==2.6.0
 pylint==2.5.3
+python-resize-image==1.1.19
 pytz==2020.1
 requests==2.24.0
 six==1.15.0
