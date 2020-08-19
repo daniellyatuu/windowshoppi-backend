@@ -104,6 +104,4 @@ venv.bak/
 .mypy_cache/
 
 media
-windowshoppi/settings/local.py
-windowshoppi/settings/production.py
 .vscode
