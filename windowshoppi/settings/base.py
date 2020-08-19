@@ -25,7 +25,7 @@ SECRET_KEY = 'te=$t+3$5pz(rczs)m75ka5@!9g64&a!+z2#l1xpi34r22@hud'
 
 
 # Application definition
-
+# all in hereeeee
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',

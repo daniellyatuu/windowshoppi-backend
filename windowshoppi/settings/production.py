@@ -6,7 +6,7 @@ DATA_UPLOAD_MAX_NUMBER_FIELDS = 10240
 DEBUG = False
 
 ALLOWED_HOSTS = []
-#updates in here
+# updates in again daniel
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
