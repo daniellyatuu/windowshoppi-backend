@@ -3,6 +3,7 @@ from .models import User, Contact
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from .forms import UserAdminCreationForm, UserAdminChangeForm
 
+
 class UserAdmin(BaseUserAdmin):
     # The forms to add and change user instances
     form = UserAdminChangeForm
@@ -34,5 +35,6 @@ class UserAdmin(BaseUserAdmin):
     ordering = ('username',)
     filter_horizontal = ()
 
-admin.site.register (User, UserAdmin)
-admin.site.register (Contact)
+
+admin.site.register(User, UserAdmin)
+admin.site.register(Contact)
