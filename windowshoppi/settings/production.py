@@ -1,4 +1,5 @@
 from .base import *
+from .crecidential import *
 
 DATA_UPLOAD_MAX_NUMBER_FIELDS = 10240
 
@@ -9,11 +10,11 @@ ALLOWED_HOSTS = []
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'windowshoppi',
-        'USER': 'root',
-        'PASSWORD': 'Zomper',
-        'HOST': 'localhost',
-        'PORT': '3306',
+        'ENGINE': 'django.db.backends.'+db_type,
+        'NAME': db_name,
+        'USER': user,
+        'PASSWORD': password,
+        'HOST': host,
+        'PORT': port,
     }
 }

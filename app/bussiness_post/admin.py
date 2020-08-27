@@ -1,3 +1,5 @@
 from django.contrib import admin
+from .models import BussinessPost, PostImage
 
-# Register your models here.
+admin.site.register(BussinessPost)
+admin.site.register(PostImage)
