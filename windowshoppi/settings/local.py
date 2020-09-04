@@ -1,9 +1,9 @@
-from .base import *
+irom .base import *
 from .crecidential import *
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', '192.168.1.62', '192.168.43.155']
+ALLOWED_HOSTS = ['3.17.145.13']
 
 DATABASES = {
     'default': {
