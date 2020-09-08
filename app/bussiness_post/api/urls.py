@@ -12,5 +12,6 @@ urlpatterns = [
     path('search/', views.SearchPost.as_view(), name='search_post'),
     path('search/<int:pk>/', views.SearchPostByCategory.as_view(),
          name='search_post_by_category'),
+    path('update-post/<int:pk>/', views.UpdatePost.as_view(), name='update_post'),
     # path('image-text/', views.InsertTextToImage.as_view(), name='image_text'),
 ]
