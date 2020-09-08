@@ -5,7 +5,7 @@ from rest_framework.authtoken.models import Token
 from rest_framework.response import Response
 from rest_framework import status, generics
 from rest_framework.views import APIView
-from .serializers import CreatePostSerializer, BussinessPostSerializer, PostImageSerializer
+from .serializers import CreatePostSerializer, BussinessPostSerializer, PostImageSerializer, UpdatePostSerializer
 from app.user.models import User
 from app.bussiness.models import Bussiness
 from app.bussiness_post.models import BussinessPost, PostImage
@@ -148,3 +148,10 @@ class SearchPostByCategory(generics.ListAPIView):
 #         print(image)
 #         image.show()
 #         return Response('start inserting')
+
+
+class UpdatePost(generics.RetrieveUpdateAPIView):
+    queryset = BussinessPost.objects.all()
+    serializer_class = UpdatePostSerializer
+    authentication_classes = [TokenAuthentication]
+    permission_classes = [IsAuthenticated]
