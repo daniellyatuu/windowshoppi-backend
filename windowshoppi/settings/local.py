@@ -3,7 +3,7 @@ from .base import *
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', '3.17.145.13']
+ALLOWED_HOSTS = ['127.0.0.1', '192.168.1.124', '3.17.145.13']
 
 DATABASES = {
     'default': {

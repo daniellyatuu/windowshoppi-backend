@@ -71,3 +71,12 @@ class BussinessPostSerializer(serializers.ModelSerializer):
 #     class Meta:
 #         model = BussinessPost
 #         fields = ['id', 'caption', 'post_photos']
+
+class UpdatePostSerializer(serializers.ModelSerializer):
+    caption = serializers.CharField(
+        style={'base_template': 'textarea.html'}, required=False)
+    active = serializers.BooleanField(required=False)
+
+    class Meta:
+        model = BussinessPost
+        fields = ['id', 'caption', 'active']
