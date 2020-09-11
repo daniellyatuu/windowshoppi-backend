@@ -52,8 +52,8 @@ class AllPost(generics.ListAPIView):
     serializer_class = BussinessPostSerializer
     # authentication_classes = [TokenAuthentication]
     # permission_classes = [IsAuthenticated]
-    pagination_class = StandardResultsSetPagination
-    # changed
+    pagination_class = MediumResultsSetPagination
+    # changed here
 
     def get_queryset(self):
         countryid = self.request.GET.get('country', '')
