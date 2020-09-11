@@ -104,6 +104,6 @@ venv.bak/
 # mypy
 .mypy_cache/
 
-# media
+media
 .vscode
 windowshoppi/settings/crecidential.py
