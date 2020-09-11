@@ -1,3 +1,4 @@
+windowshoppi/settings/crecidential.py
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -106,3 +107,4 @@ venv.bak/
 media
 .vscode
 windowshoppi/settings/crecidential.py
+fixtures
