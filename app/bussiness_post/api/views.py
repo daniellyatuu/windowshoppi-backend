@@ -54,6 +54,7 @@ class AllPost(generics.ListAPIView):
     # permission_classes = [IsAuthenticated]
     pagination_class = MediumResultsSetPagination
     # changed here
+    # daniellyatuu
 
     def get_queryset(self):
         countryid = self.request.GET.get('country', '')
