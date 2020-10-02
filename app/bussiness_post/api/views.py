@@ -1,5 +1,5 @@
 from rest_framework.authentication import TokenAuthentication
-from windowshoppi.pagination import StandardResultsSetPagination, MediumResultsSetPagination
+from windowshoppi.pagination import StandardResultsSetPagination, MediumResultsSetPagination, StandardResultsSetLimitOffset
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.authtoken.models import Token
 from rest_framework.response import Response
@@ -13,6 +13,7 @@ from rest_framework.parsers import MultiPartParser, FormParser
 from rest_framework.exceptions import ValidationError
 from windowshoppi.api_permissions.permissions import IsAllowedToPost, IsBussinessBelongToMe
 from PIL import Image, ImageDraw, ImageFont
+from rest_framework.decorators import api_view, permission_classes
 
 
 class CreatePostView(APIView):
@@ -53,13 +54,31 @@ class AllPost(generics.ListAPIView):
     # authentication_classes = [TokenAuthentication]
     # permission_classes = [IsAuthenticated]
     pagination_class = MediumResultsSetPagination
-    # its done
 
     def get_queryset(self):
         countryid = self.request.GET.get('country', '')
         categoryid = self.request.GET.get('category', '')
         print(countryid)
         print(categoryid)
+        category = int(categoryid)
+
+        if(category == 0):
+            queryset = BussinessPost.objects.filter(
+                active=True, bussiness__country_id=countryid)
+        else:
+            queryset = BussinessPost.objects.filter(
+                active=True, bussiness__country_id=countryid, bussiness__category_id=categoryid)
+
+        return queryset
+
+
+class PostList(generics.ListAPIView):
+    serializer_class = BussinessPostSerializer
+    pagination_class = StandardResultsSetLimitOffset
+
+    def get_queryset(self):
+        countryid = self.request.GET.get('country', '')
+        categoryid = self.request.GET.get('category', '')
         category = int(categoryid)
 
         if(category == 0):

@@ -10,10 +10,10 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
-import os
-
-import sentry_sdk
 from sentry_sdk.integrations.django import DjangoIntegration
+from google.oauth2 import service_account
+import sentry_sdk
+import os
 
 sentry_sdk.init(
     dsn="https://31708c73fcc740089c1442fa17e8c309@o396538.ingest.sentry.io/5407104",
@@ -138,5 +138,15 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, "static/")
 
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# for media storage in the bucket
+GS_CREDENTIALS = service_account.Credentials.from_service_account_file(
+    os.path.join(BASE_DIR, 'windowshoppi-storage-credential.json'))
+
+# configuration for media file storing and retriving from google-cloud
+DEFAULT_FILE_STORAGE = 'windowshoppi.gcloud.GoogleCloudMediaFileStorage'
+GS_BUCKET_NAME = 'windowshoppi_media'
+GS_PROJECT_ID = 'windowshoppi'
+MEDIA_URL = 'https://storage.googleapis.com/{}/'.format(
+    GS_BUCKET_NAME)
