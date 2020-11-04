@@ -1,8 +1,8 @@
 from windowshoppi.api_permissions.permissions import IsExcAdminOrAdmin
 from rest_framework.authentication import TokenAuthentication
-from rest_framework.pagination import PageNumberPagination
+from windowshoppi.pagination import StandardResultsSetPagination, MediumResultsSetPagination
 from rest_framework.permissions import IsAuthenticated, AllowAny
-from app.master_data.models import Country, Category
+from app.master_data.models import Country
 from rest_framework.authtoken.models import Token
 from .serializers import RegistrationSerializer, UserSerializer, LoginSerializer, UpdateAccountSerializer
 from django.contrib.auth.models import Group
@@ -28,15 +28,16 @@ class RegisterVendor(APIView):
             # get user phone numbers
             phone_number = windowshoppi_user.phone_numbers.all()[0]
 
-            # get user bussiness
-            bussiness = windowshoppi_user.user_bussiness.all()[0]
+            # get user business
+            business = windowshoppi_user.user_business.all()[0]
 
             feedback['response'] = 'success'
+            feedback['user_name'] = windowshoppi_user.username
             feedback['token'] = token.key
-            feedback['business_id'] = bussiness.id
-            feedback['business_name'] = bussiness.name
-            feedback['business_location'] = bussiness.location_name
-            feedback['bio'] = bussiness.bio
+            feedback['business_id'] = business.id
+            feedback['business_name'] = business.name
+            feedback['business_location'] = business.location_name
+            feedback['bio'] = business.bio
             feedback['call'] = phone_number.call
             feedback['whatsapp'] = phone_number.whatsapp
             feedback['profile_image'] = ''
@@ -53,6 +54,7 @@ class LoginView(APIView):
 
     def post(self, request):
         data = request.data
+
         serializer = self.serializer_class(data=data)
         serializer.is_valid(raise_exception=True)
 
@@ -64,7 +66,7 @@ class UserList(generics.ListAPIView):
     serializer_class = UserSerializer
     authentication_classes = [TokenAuthentication]
     permission_classes = [IsAuthenticated, IsExcAdminOrAdmin]
-    pagination_class = PageNumberPagination
+    pagination_class = StandardResultsSetPagination
 
 
 class ValidateUsername(APIView):

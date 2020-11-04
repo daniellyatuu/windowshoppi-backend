@@ -26,6 +26,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 ]
 
+admin.site.site_header = 'windowshoppi adminstration'
+admin.site.site_title = 'windowshoppi admin'
 
 if settings.DEBUG:
     urlpatterns = urlpatterns + \

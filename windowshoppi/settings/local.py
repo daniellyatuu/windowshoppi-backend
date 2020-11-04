@@ -1,9 +1,9 @@
 from .crecidential import *
 from .base import *
 
-DEBUG = True
+print('development server')
 
-ALLOWED_HOSTS = ['127.0.0.1', '192.168.1.70', '3.17.145.13']
+ALLOWED_HOSTS = ['127.0.0.1', '192.168.1.79']
 
 DATABASES = {
     'default': {

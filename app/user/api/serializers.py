@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from app.user.models import User, Contact
 from app.bussiness.models import Bussiness
-from app.master_data.models import Country, Category
+from app.master_data.models import Country, HashTag
 from django.core.validators import RegexValidator
 from django.contrib.auth import authenticate
 from rest_framework.authtoken.models import Token
@@ -9,8 +9,6 @@ from rest_framework.authtoken.models import Token
 
 class RegistrationSerializer(serializers.ModelSerializer):
     name = serializers.CharField(max_length=255)
-    category = serializers.PrimaryKeyRelatedField(
-        queryset=Category.objects.all())
     country = serializers.PrimaryKeyRelatedField(
         queryset=Country.objects.all())
     location_name = serializers.CharField(max_length=255)
@@ -21,8 +19,8 @@ class RegistrationSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fields = ['username', 'password', 'group', 'name', 'category',
-                  'country', 'location_name', 'lattitude', 'longitude', 'call']
+        fields = ['username', 'password', 'group', 'name', 'country',
+                  'location_name', 'lattitude', 'longitude', 'call']
         extra_kwargs = {
             'password': {'write_only': True}
         }
@@ -32,7 +30,6 @@ class RegistrationSerializer(serializers.ModelSerializer):
         password = self.validated_data['password']
         group = self.validated_data['group']
         name = self.validated_data['name']
-        category = self.validated_data['category']
         country = self.validated_data['country']
         location_name = self.validated_data['location_name']
         lattitude = self.validated_data['lattitude']
@@ -60,7 +57,6 @@ class RegistrationSerializer(serializers.ModelSerializer):
         Bussiness.objects.create(
             user=windowshoppi_user,
             name=name,
-            category=category,
             country=country,
             location_name=location_name,
             lattitude=lattitude,
@@ -77,6 +73,7 @@ class LoginSerializer(serializers.Serializer):
     """
 
     username = serializers.CharField(write_only=True)
+    user_name = serializers.CharField(max_length=255, read_only=True)
     password = serializers.CharField(max_length=128, write_only=True)
     token = serializers.CharField(max_length=255, read_only=True)
     call = serializers.CharField(max_length=255, read_only=True)
@@ -87,6 +84,7 @@ class LoginSerializer(serializers.Serializer):
     bio = serializers.CharField(max_length=255, read_only=True)
     profile_image = serializers.CharField(max_length=255, read_only=True)
     email = serializers.EmailField(max_length=255, read_only=True)
+    result = serializers.CharField(max_length=10, read_only=True)
 
     def validate(self, data):
 
@@ -115,33 +113,47 @@ class LoginSerializer(serializers.Serializer):
                 'This user has been deactivated.'
             )
 
-        # get user token
-        token = Token.objects.get(user=user).key
+        if(user.group is not None):
 
-        # get user phone numbers
-        phone_number = user.phone_numbers.all()[0]
+            # check if user is vendor
+            if(user.group.name == 'vendor'):
 
-        # get user bussiness
-        bussiness = user.user_bussiness.all()[0]
+                # get user token
+                token = Token.objects.get(user=user).key
 
-        return {
-            'token': token,
-            'business_id': bussiness.id,
-            'business_name': bussiness.name,
-            'business_location': bussiness.location_name,
-            'bio': bussiness.bio,
-            'call': phone_number.call,
-            'whatsapp': phone_number.whatsapp,
-            'profile_image': bussiness.profile_image,
-            'email': user.email,
-        }
+                # get user phone numbers
+                phone_number = user.phone_numbers.all()[0]
+
+                # get user business
+                business = user.user_business.all()[0]
+
+                return {
+                    'result': 'success',
+                    'token': token,
+                    'user_name': username,
+                    'business_id': business.id,
+                    'business_name': business.name,
+                    'business_location': business.location_name,
+                    'bio': business.bio,
+                    'call': phone_number.call,
+                    'whatsapp': phone_number.whatsapp,
+                    'profile_image': business.profile_image,
+                    'email': user.email,
+                }
+            else:
+                return {
+                    'result': 'access_to_vendor_only'
+                }
+        else:
+            return {
+                'result': 'access_to_vendor_only'
+            }
 
 
 class BussinessSerializer(serializers.ModelSerializer):
     class Meta:
         model = Bussiness
-        fields = ['name', 'category', 'country',
-                  'location_name', 'lattitude', 'longitude']
+        fields = ['name', 'country', 'location_name', 'lattitude', 'longitude']
 
 
 class ContactSerializer(serializers.ModelSerializer):
@@ -151,12 +163,12 @@ class ContactSerializer(serializers.ModelSerializer):
 
 
 class UserSerializer(serializers.ModelSerializer):
-    user_bussiness = BussinessSerializer(many=True)
+    user_business = BussinessSerializer(many=True)
     phone_numbers = ContactSerializer(many=True)
 
     class Meta:
         model = User
-        fields = ['id', 'username', 'group', 'user_bussiness', 'phone_numbers']
+        fields = ['id', 'username', 'group', 'user_business', 'phone_numbers']
 
 
 class UpdateAccountSerializer(serializers.ModelSerializer):
@@ -197,7 +209,7 @@ class UpdateAccountSerializer(serializers.ModelSerializer):
         phone_number.save()
 
         # update Bussiness Model
-        bussiness = instance.user_bussiness.all()[0]
+        bussiness = instance.user_business.all()[0]
         bussiness.name = business_name
         bussiness.bio = bio
         bussiness.save()

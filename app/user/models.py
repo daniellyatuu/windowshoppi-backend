@@ -1,7 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import (AbstractBaseUser, BaseUserManager)
 from django.contrib.auth.models import Group
-from app.master_data.models import Category
 from django.core.validators import RegexValidator
 from django.conf import settings
 from django.db.models.signals import post_save

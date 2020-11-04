@@ -9,10 +9,13 @@ class IsExcAdminOrAdmin(BasePermission):
     def has_permission(self, request, view):
 
         allowed_groups = ['exc_admin', 'admin']
-        active_user_group = request.user.group.name
 
-        if active_user_group in allowed_groups:
-            return True
+        user_group = request.user.group
+        if user_group is not None:
+            active_user_group = user_group.name
+
+            if active_user_group in allowed_groups:
+                return True
 
 
 class IsAllowedToPost(BasePermission):
@@ -21,10 +24,13 @@ class IsAllowedToPost(BasePermission):
     def has_permission(self, request, view):
 
         allowed_groups = ['vendor']
-        active_user_group = request.user.group.name
 
-        if active_user_group in allowed_groups:
-            return True
+        user_group = request.user.group
+        if user_group is not None:
+            active_user_group = user_group.name
+
+            if active_user_group in allowed_groups:
+                return True
 
 
 class IsBussinessBelongToMe(BasePermission):

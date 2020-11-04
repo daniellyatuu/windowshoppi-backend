@@ -50,6 +50,7 @@ class PostImageSerializer(serializers.ModelSerializer):
 
 class BussinessPostSerializer(serializers.ModelSerializer):
     post_photos = PostImageSerializer(many=True)
+    user_name = serializers.CharField(source='bussiness.user')
     account_name = serializers.CharField(source='bussiness.name')
     business_location = serializers.CharField(source='bussiness.location_name')
     account_profile = serializers.CharField(source='bussiness.profile_image')
@@ -60,7 +61,7 @@ class BussinessPostSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = BussinessPost
-        fields = ['id', 'bussiness', 'account_profile', 'account_name', 'call_number',
+        fields = ['id', 'bussiness', 'account_profile', 'user_name', 'account_name', 'call_number',
                   'whatsapp_number', 'business_location', 'caption', 'post_photos']
 
 

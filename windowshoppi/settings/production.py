@@ -1,10 +1,9 @@
 from .base import *
 from .crecidential import *
 
-DATA_UPLOAD_MAX_NUMBER_FIELDS = 10240
+print('production server')
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DATA_UPLOAD_MAX_NUMBER_FIELDS = 10240
 
 ALLOWED_HOSTS = ['3.17.145.13']
 

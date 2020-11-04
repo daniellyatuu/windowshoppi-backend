@@ -1,18 +1,17 @@
 from django.db import models
 from app.bussiness.models import Bussiness
-from app.master_data.models import Category
+from app.master_data.models import HashTag
 import sys
 from PIL import Image
 from io import BytesIO
 from django.core.files import File
 from resizeimage import resizeimage
-# from django.core.files.uploadedfile import InMemoryUploadedFile
 
 
 class BussinessPost(models.Model):
     bussiness = models.ForeignKey(
         Bussiness, related_name='bussiness_posts', on_delete=models.CASCADE)
-    categories = models.ManyToManyField(Category)
+    categories = models.ManyToManyField(HashTag)
     caption = models.TextField()
     active = models.BooleanField(default=True)
     date_posted = models.DateTimeField(auto_now_add=True)
@@ -20,6 +19,9 @@ class BussinessPost(models.Model):
 
     class Meta:
         ordering = ['-id']
+
+    def __str__(self):
+        return "{} - Post from {}".format(self.id, self.bussiness.name)
 
 
 class PostImage(models.Model):
@@ -44,3 +46,6 @@ class PostImage(models.Model):
         im.save(im_io, 'JPEG', quality=60)
         new_image = File(im_io, name=filename.name)
         return new_image
+
+    def __str__(self):
+        return "{}".format(self.filename)
