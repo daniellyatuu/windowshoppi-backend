@@ -4,17 +4,22 @@ from windowshoppi.pagination import StandardResultsSetPagination, MediumResultsS
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from app.master_data.models import Country
 from rest_framework.authtoken.models import Token
-from .serializers import RegistrationSerializer, UserSerializer, LoginSerializer, UpdateAccountSerializer
+from .serializers import RegistrationSerializer, UserSerializer, UserLoginSerializer, LoginSerializer, UpdateAccountSerializer
 from django.contrib.auth.models import Group
 from rest_framework.response import Response
 from rest_framework import status, generics
 from rest_framework.views import APIView
 from app.user.models import User
+from django.shortcuts import get_object_or_404
+from django.http import HttpResponse, HttpResponseRedirect
+from django.urls import reverse
 
 
 class RegisterVendor(APIView):
     def post(self, request, format=None):
         data = self.request.data
+
+        print(data)
 
         serializer = RegistrationSerializer(data=data)
 
@@ -25,23 +30,7 @@ class RegisterVendor(APIView):
             # get user auth token
             token = Token.objects.get(user=windowshoppi_user)
 
-            # get user phone numbers
-            phone_number = windowshoppi_user.phone_numbers.all()[0]
-
-            # get user business
-            business = windowshoppi_user.user_business.all()[0]
-
-            feedback['response'] = 'success'
-            feedback['user_name'] = windowshoppi_user.username
             feedback['token'] = token.key
-            feedback['business_id'] = business.id
-            feedback['business_name'] = business.name
-            feedback['business_location'] = business.location_name
-            feedback['bio'] = business.bio
-            feedback['call'] = phone_number.call
-            feedback['whatsapp'] = phone_number.whatsapp
-            feedback['profile_image'] = ''
-            feedback['email'] = windowshoppi_user.email
 
             return Response(feedback, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
@@ -59,6 +48,32 @@ class LoginView(APIView):
         serializer.is_valid(raise_exception=True)
 
         return Response(serializer.data, status=status.HTTP_200_OK)
+
+
+class UserLogin(APIView):
+
+    permission_classes = [AllowAny]
+    serializer_class = UserLoginSerializer
+
+    def post(self, request):
+        data = request.data
+
+        serializer = self.serializer_class(data=data)
+
+        if serializer.is_valid(raise_exception=True):
+            return Response(serializer.data, status=status.HTTP_200_OK)
+
+
+class UserData(generics.RetrieveAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+    authentication_classes = [TokenAuthentication]
+    permission_classes = [IsAuthenticated]
+
+    def get_object(self):
+        queryset = self.get_queryset()
+        obj = get_object_or_404(queryset, id=self.request.user.id)
+        return obj
 
 
 class UserList(generics.ListAPIView):

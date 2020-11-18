@@ -67,6 +67,7 @@ class PostList(generics.ListAPIView):
 
     def get_queryset(self):
         countryid = self.request.GET.get('country', '')
+        print('pass here')
 
         queryset = BussinessPost.objects.filter(
             active=True, bussiness__country_id=countryid)

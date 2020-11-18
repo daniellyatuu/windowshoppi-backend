@@ -10,10 +10,10 @@ class Bussiness(models.Model):
     profile_image = models.ImageField(
         upload_to='profile_pics_demo', blank=True, null=True)  # upload_to = 'profile_pics'
     bio = models.TextField(blank=True, null=True)
-    country = models.ForeignKey(Country, on_delete=models.CASCADE)
-    location_name = models.CharField(max_length=255)
-    lattitude = models.FloatField()
-    longitude = models.FloatField()
+    # country = models.ForeignKey(Country, on_delete=models.CASCADE)
+    location_name = models.CharField(max_length=255, blank=True, null=True)
+    lattitude = models.FloatField(blank=True, null=True)
+    longitude = models.FloatField(blank=True, null=True)
     date_registered = models.DateTimeField(auto_now_add=True)
     date_modified = models.DateTimeField(auto_now=True)
     active = models.BooleanField(default=True)

@@ -5,7 +5,7 @@ from .models import Bussiness
 class BusinessAdmin(admin.ModelAdmin):
     list_display = [
         'name',
-        'country',
+        # 'country',
         'bio',
         'location_name',
         'active',

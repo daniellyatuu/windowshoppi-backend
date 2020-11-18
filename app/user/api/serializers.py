@@ -8,37 +8,38 @@ from rest_framework.authtoken.models import Token
 
 
 class RegistrationSerializer(serializers.ModelSerializer):
-    name = serializers.CharField(max_length=255)
-    country = serializers.PrimaryKeyRelatedField(
-        queryset=Country.objects.all())
-    location_name = serializers.CharField(max_length=255)
-    lattitude = serializers.FloatField()
-    longitude = serializers.FloatField()
+    # name = serializers.CharField(max_length=255)
+    # country = serializers.PrimaryKeyRelatedField(
+    #     queryset=Country.objects.all())
+    # location_name = serializers.CharField(max_length=255, required=False)
+    # lattitude = serializers.FloatField(required=False)
+    # longitude = serializers.FloatField(required=False)
     call = serializers.CharField(max_length=17, validators=[RegexValidator(
         regex=r'^\+?1?\d{9,15}$', message="Phone number must be entered in the format: '+999999999'. Up to 15 digits allowed.")])
 
     class Meta:
         model = User
-        fields = ['username', 'password', 'group', 'name', 'country',
-                  'location_name', 'lattitude', 'longitude', 'call']
+        fields = ['first_name', 'last_name', 'username',
+                  'email', 'password', 'group', 'call']
         extra_kwargs = {
             'password': {'write_only': True}
         }
 
     def create(self, validated_data):
+        firstname = self.validated_data['first_name']
+        lastname = self.validated_data['last_name']
         username = self.validated_data['username']
+        email_address = self.validated_data.get('email', None)
         password = self.validated_data['password']
         group = self.validated_data['group']
-        name = self.validated_data['name']
-        country = self.validated_data['country']
-        location_name = self.validated_data['location_name']
-        lattitude = self.validated_data['lattitude']
-        longitude = self.validated_data['longitude']
         call = self.validated_data['call']
 
         # save user
         windowshoppi_user = User(
+            first_name=firstname,
+            last_name=lastname,
             username=username,
+            email=email_address,
             group=group,
         )
 
@@ -53,15 +54,6 @@ class RegistrationSerializer(serializers.ModelSerializer):
             user=windowshoppi_user, call=call,
         )
 
-        # save user bussiness
-        Bussiness.objects.create(
-            user=windowshoppi_user,
-            name=name,
-            country=country,
-            location_name=location_name,
-            lattitude=lattitude,
-            longitude=longitude,
-        )
         return windowshoppi_user
 
 
@@ -150,10 +142,70 @@ class LoginSerializer(serializers.Serializer):
             }
 
 
+class UserLoginSerializer(serializers.Serializer):
+    """
+    Authenticates an existing user.
+    Email and password are required.
+    Returns a JSON web token.
+    """
+
+    username = serializers.CharField(write_only=True)
+    password = serializers.CharField(max_length=128, write_only=True)
+    token = serializers.CharField(max_length=255, read_only=True)
+
+    def validate(self, data):
+
+        username = data.get('username', None)
+        password = data.get('password', None)
+
+        if username is None:
+            raise serializers.ValidationError(
+                'username is required to log in.'
+            )
+
+        if password is None:
+            raise serializers.ValidationError(
+                'A password is required to log in.'
+            )
+
+        user = authenticate(username=username, password=password)
+
+        if user is None:
+            raise serializers.ValidationError(
+                'invalid_account'
+            )
+
+        if not user.is_active:
+            raise serializers.ValidationError(
+                'This user has been deactivated.'
+            )
+
+        if(user.group is not None):
+
+            # check if user is vendor
+            if(user.group.name == 'vendor'):
+
+                # get user token
+                token = Token.objects.get(user=user).key
+
+                return {
+                    'token': token,
+                }
+            else:
+                raise serializers.ValidationError(
+                    'access_to_vendor_only.'
+                )
+
+        else:
+            raise serializers.ValidationError(
+                'access_to_vendor_only.'
+            )
+
+
 class BussinessSerializer(serializers.ModelSerializer):
     class Meta:
         model = Bussiness
-        fields = ['name', 'country', 'location_name', 'lattitude', 'longitude']
+        fields = ['name', 'bio', 'location_name', 'lattitude', 'longitude']
 
 
 class ContactSerializer(serializers.ModelSerializer):
@@ -165,10 +217,12 @@ class ContactSerializer(serializers.ModelSerializer):
 class UserSerializer(serializers.ModelSerializer):
     user_business = BussinessSerializer(many=True)
     phone_numbers = ContactSerializer(many=True)
-
+    group_name = serializers.CharField(source='group.name')
+    
     class Meta:
         model = User
-        fields = ['id', 'username', 'group', 'user_business', 'phone_numbers']
+        fields = ['id', 'username', 'first_name', 'last_name', 'email',
+                  'group_name', 'date_joined', 'user_business', 'phone_numbers']
 
 
 class UpdateAccountSerializer(serializers.ModelSerializer):
