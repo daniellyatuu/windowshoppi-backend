@@ -20,12 +20,17 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('', include('app.user.api.urls')),
-    path('business/', include('app.bussiness.api.urls')),
-    path('post/', include('app.bussiness_post.api.urls')),
+    # path('business/', include('app.account.api.urls')),  # will be removed
+    # path('post1/', include('app.bussiness_post.api.urls')),  # will be removed
+    path('account/', include('app.account.api.urls', namespace='account')),
+    path('business/', include('app.account.api.urls', namespace='business')),
+    path('post/', include('app.account_post.api.urls')),
     path('master_data/', include('app.master_data.api.urls')),
     path('admin/', admin.site.urls),
 ]
 
+admin.site.site_header = 'windowshoppi adminstration'
+admin.site.site_title = 'windowshoppi admin'
 
 if settings.DEBUG:
     urlpatterns = urlpatterns + \

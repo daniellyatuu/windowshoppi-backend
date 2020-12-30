@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from app.master_data.models import Country, Category
+from app.master_data.models import Country, HashTag
 
 
 class CountrySerializer(serializers.ModelSerializer):
@@ -29,7 +29,7 @@ class CountrySerializer(serializers.ModelSerializer):
         return country
 
 
-class CategorySerializer(serializers.ModelSerializer):
+class HashTagSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Category
+        model = HashTag
         fields = ['id', 'name']

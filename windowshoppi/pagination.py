@@ -20,5 +20,5 @@ class LargeResultsSetPagination(PageNumberPagination):
 
 
 class StandardResultsSetLimitOffset(LimitOffsetPagination):
-    # default_limit = 20
+    default_limit = 20
     max_limit = 100

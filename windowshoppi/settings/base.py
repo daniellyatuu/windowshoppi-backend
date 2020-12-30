@@ -36,6 +36,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'te=$t+3$5pz(rczs)m75ka5@!9g64&a!+z2#l1xpi34r22@hud'
 
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = True
 
 # Application definition
 
@@ -48,10 +50,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'rest_framework.authtoken',
+    'background_task',
     'app.master_data',
     'app.user',
-    'app.bussiness',
-    'app.bussiness_post',
+    'app.bussiness',  # will be removed
+    'app.bussiness_post',  # will be removed
+    'app.account',
+    'app.account_post'
 ]
 
 REST_FRAMEWORK = {
@@ -83,8 +88,10 @@ ROOT_URLCONF = 'windowshoppi.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
         'APP_DIRS': True,
+        'DIRS': [
+            os.path.join(BASE_DIR, 'templates')
+        ],
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
@@ -146,7 +153,15 @@ GS_CREDENTIALS = service_account.Credentials.from_service_account_file(
 
 # configuration for media file storing and retriving from google-cloud
 DEFAULT_FILE_STORAGE = 'windowshoppi.gcloud.GoogleCloudMediaFileStorage'
-GS_BUCKET_NAME = 'windowshoppi_media'
-GS_PROJECT_ID = 'windowshoppi'
+
+# # for production
+# GS_BUCKET_NAME = 'windowshoppi_media'
+# GS_PROJECT_ID = 'windowshoppi'
+
+# for development
+GS_BUCKET_NAME = 'windowshoppi_post_pictures'
+GS_PROJECT_ID = 'location-1549615378220'
+
+
 MEDIA_URL = 'https://storage.googleapis.com/{}/'.format(
     GS_BUCKET_NAME)

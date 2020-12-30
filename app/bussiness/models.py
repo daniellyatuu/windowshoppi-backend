@@ -1,21 +1,19 @@
 from django.db import models
 from app.user.models import User
-from app.master_data.models import Country, Category
+from app.master_data.models import Country, HashTag
 
 
 class Bussiness(models.Model):
     name = models.CharField(max_length=255)
     user = models.ForeignKey(
-        User, related_name='user_bussiness', on_delete=models.CASCADE)
-    category = models.ForeignKey(
-        Category, related_name='bussiness_category', on_delete=models.CASCADE)
-    country = models.ForeignKey(Country, on_delete=models.CASCADE)
+        User, related_name='user_business', on_delete=models.CASCADE)
     profile_image = models.ImageField(
         upload_to='profile_pics_demo', blank=True, null=True)  # upload_to = 'profile_pics'
     bio = models.TextField(blank=True, null=True)
-    location_name = models.CharField(max_length=255)
-    lattitude = models.FloatField()
-    longitude = models.FloatField()
+    # country = models.ForeignKey(Country, on_delete=models.CASCADE)
+    location_name = models.CharField(max_length=255, blank=True, null=True)
+    lattitude = models.FloatField(blank=True, null=True)
+    longitude = models.FloatField(blank=True, null=True)
     date_registered = models.DateTimeField(auto_now_add=True)
     date_modified = models.DateTimeField(auto_now=True)
     active = models.BooleanField(default=True)
@@ -25,3 +23,4 @@ class Bussiness(models.Model):
 
     class Meta:
         ordering = ['-id']
+        verbose_name_plural = 'Business'

@@ -51,24 +51,13 @@ class CreatePostView(APIView):
 class AllPost(generics.ListAPIView):
 
     serializer_class = BussinessPostSerializer
-    # authentication_classes = [TokenAuthentication]
-    # permission_classes = [IsAuthenticated]
     pagination_class = MediumResultsSetPagination
 
     def get_queryset(self):
         countryid = self.request.GET.get('country', '')
-        categoryid = self.request.GET.get('category', '')
-        print(countryid)
-        print(categoryid)
-        category = int(categoryid)
 
-        if(category == 0):
-            queryset = BussinessPost.objects.filter(
-                active=True, bussiness__country_id=countryid)
-        else:
-            queryset = BussinessPost.objects.filter(
-                active=True, bussiness__country_id=countryid, bussiness__category_id=categoryid)
-
+        queryset = BussinessPost.objects.filter(
+            active=True, bussiness__country_id=countryid)
         return queryset
 
 
@@ -78,35 +67,21 @@ class PostList(generics.ListAPIView):
 
     def get_queryset(self):
         countryid = self.request.GET.get('country', '')
-        categoryid = self.request.GET.get('category', '')
-        category = int(categoryid)
+        print('pass here')
 
-        if(category == 0):
-            queryset = BussinessPost.objects.filter(
-                active=True, bussiness__country_id=countryid)
-        else:
-            queryset = BussinessPost.objects.filter(
-                active=True, bussiness__country_id=countryid, bussiness__category_id=categoryid)
+        queryset = BussinessPost.objects.filter(
+            active=True, bussiness__country_id=countryid)
 
         return queryset
-
-
-# class PostPhoto(generics.RetrieveAPIView):
-#     queryset = PostImage.objects.all()
-#     serializer_class = PostImageSerializer
-#     # authentication_classes = [TokenAuthentication]
-#     # permission_classes = [IsAuthenticated]
-#     pagination_class = PageNumberPagination
 
 
 class VendorPost(generics.ListAPIView):
     serializer_class = BussinessPostSerializer
     authentication_classes = [TokenAuthentication]
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated, IsAllowedToPost]
     pagination_class = MediumResultsSetPagination
 
     def get_queryset(self):
-        # git pull is working fine
         bussiness = Bussiness.objects.filter(user=self.request.user)[0]
 
         pk = bussiness.id
@@ -118,7 +93,6 @@ class BusinessPost(generics.ListAPIView):
     pagination_class = MediumResultsSetPagination
 
     def get_queryset(self):
-
         id = self.kwargs['pk']
         return BussinessPost.objects.filter(bussiness_id=id, active=True)
 
@@ -128,6 +102,7 @@ class SearchPost(generics.ListAPIView):
     pagination_class = MediumResultsSetPagination
 
     def get_queryset(self):
+        print('pass in here')
         countryid = self.request.query_params.get('country', '')
         keyword = self.request.query_params.get('keyword', '')
 
@@ -147,12 +122,9 @@ class SearchPostByCategory(generics.ListAPIView):
 
     def get_queryset(self):
         countryid = self.request.query_params.get('country', '')
-        categoryid = self.kwargs['pk']
-
-        categoryid = int(categoryid)
 
         queryset = BussinessPost.objects.filter(
-            active=True, bussiness__category_id=categoryid, bussiness__country_id=countryid)
+            active=True, bussiness__country_id=countryid)
         return queryset
 
 
