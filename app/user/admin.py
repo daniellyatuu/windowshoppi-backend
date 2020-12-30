@@ -1,7 +1,7 @@
-from django.contrib import admin
-from .models import User, Contact
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from .forms import UserAdminCreationForm, UserAdminChangeForm
+from .models import User, Contact
+from django.contrib import admin
 
 
 class UserAdmin(BaseUserAdmin):
@@ -12,12 +12,11 @@ class UserAdmin(BaseUserAdmin):
     # The fields to be used in displaying the User model.
     # These override the definitions on the base UserAdmin
     # that reference specific fields on auth.User.
-    list_display = ('username', 'group', 'staff', 'superuser', 'active')
+    list_display = ('username', 'staff', 'superuser', 'active')
     list_filter = ('superuser',)
 
     fieldsets = (
         (None, {'fields': ('username', 'password')}),
-        ('Group', {'fields': ('group',)}),
         ('Personal info', {'fields': ('first_name', 'last_name', 'email')}),
         ('Permissions', {'fields': ('active', 'staff', 'superuser')}),
     )
@@ -36,5 +35,23 @@ class UserAdmin(BaseUserAdmin):
     filter_horizontal = ()
 
 
+class ContactAdmin(admin.ModelAdmin):
+    list_display = [
+        'user',
+        'call',
+        'call_iso_code',
+        'whatsapp',
+        'whatsapp_iso_code',
+        'date_added',
+        'date_modified',
+    ]
+
+    search_fields = [
+        'user__username',
+        'call',
+        'whatsapp',
+    ]
+
+
 admin.site.register(User, UserAdmin)
-admin.site.register(Contact)
+admin.site.register(Contact, ContactAdmin)

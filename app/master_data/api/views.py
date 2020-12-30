@@ -12,8 +12,8 @@ from rest_framework.views import APIView
 
 
 class CreateCountry(generics.CreateAPIView):
-    # authentication_classes = [TokenAuthentication]
-    # permission_classes = [IsAuthenticated]
+    authentication_classes = [TokenAuthentication]
+    permission_classes = [IsAuthenticated]
     parser_classes = (MultiPartParser, FormParser)
     queryset = Country.objects.all()
     serializer_class = CountrySerializer
@@ -27,7 +27,7 @@ class AllCountry(generics.ListAPIView):
 class Top30HashTags(APIView):
     def get(self, request):
         category_list = HashTag.objects.raw(
-            'SELECT id, name FROM master_data_hashtag ORDER BY visited DESC LIMIT 30')
+            'SELECT id, name FROM hashtag ORDER BY visited DESC LIMIT 30')
 
         serializer = HashTagSerializer(category_list, many=True)
         return Response(serializer.data)

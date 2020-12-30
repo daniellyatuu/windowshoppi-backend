@@ -1,11 +1,11 @@
-from django.db import models
 from django.contrib.auth.models import (AbstractBaseUser, BaseUserManager)
-from django.contrib.auth.models import Group
+from rest_framework.authtoken.models import Token
 from django.core.validators import RegexValidator
-from django.conf import settings
 from django.db.models.signals import post_save
 from django.dispatch import receiver
-from rest_framework.authtoken.models import Token
+from django.conf import settings
+from django.db import models
+
 
 ###########################################################################
 # extend User model .start
@@ -50,8 +50,6 @@ class User(AbstractBaseUser):
     last_name = models.CharField(max_length=255, blank=True, null=True)
     username = models.CharField(max_length=255, unique=True)
     email = models.EmailField(max_length=255, blank=True, null=True)
-    group = models.ForeignKey(
-        Group, on_delete=models.CASCADE, blank=True, null=True)
     superuser = models.BooleanField(default=False)  # super user
     staff = models.BooleanField(default=False)  # staff user non superuser
     active = models.BooleanField(default=True)  # can login
@@ -86,6 +84,10 @@ class User(AbstractBaseUser):
     def is_active(self):
         return self.active
 
+    def contact_id(self):
+        contact_id = self.phone_numbers.all()[0]
+        return contact_id.id
+
     def call_phone_number(self):
         user_contact = self.phone_numbers.all()[0]
         return user_contact.call
@@ -95,6 +97,7 @@ class User(AbstractBaseUser):
         return user_contact.whatsapp
 
     class Meta:
+        db_table = 'user'
         ordering = ['-id']
 
 ###########################################################################
@@ -115,13 +118,19 @@ class Contact(models.Model):
     user = models.ForeignKey(
         User, related_name="phone_numbers", on_delete=models.CASCADE)
     call = models.CharField(validators=[phone_regex], max_length=17)
+    call_iso_code = models.CharField(max_length=10, blank=True, null=True)
     whatsapp = models.CharField(
         validators=[phone_regex], max_length=17, blank=True, null=True)
+    whatsapp_iso_code = models.CharField(max_length=10, blank=True, null=True)
     date_added = models.DateTimeField(auto_now_add=True)
     date_modified = models.DateTimeField(auto_now=True)
 
-    def __str__(self):
-        return '%s : %s' % (self.user, self.call)
+    # def __str__(self):
+    #     return '%s : %s' % (self.user, self.call)
+
+    class Meta:
+        db_table = 'contact'
+        ordering = ['-id']
 
 
 class UserLocation(models.Model):
@@ -136,4 +145,5 @@ class UserLocation(models.Model):
         return self.location_name
 
     class Meta:
+        db_table = 'user_location'
         ordering = ['-id']

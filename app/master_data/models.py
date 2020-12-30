@@ -1,8 +1,8 @@
-import sys
-from django.db import models
-from PIL import Image
-from io import BytesIO
 from django.core.files.uploadedfile import InMemoryUploadedFile
+from django.db import models
+from io import BytesIO
+from PIL import Image
+import sys
 
 
 class Country(models.Model):
@@ -30,3 +30,7 @@ class HashTag(models.Model):
 
     def __str__(self):
         return self.name
+
+    class Meta:
+        db_table = 'hashtag'
+        ordering = ['-id']

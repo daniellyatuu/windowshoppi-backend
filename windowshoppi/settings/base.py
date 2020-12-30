@@ -50,10 +50,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'rest_framework.authtoken',
+    'background_task',
     'app.master_data',
     'app.user',
-    'app.bussiness',
-    'app.bussiness_post',
+    'app.bussiness',  # will be removed
+    'app.bussiness_post',  # will be removed
+    'app.account',
+    'app.account_post'
 ]
 
 REST_FRAMEWORK = {
