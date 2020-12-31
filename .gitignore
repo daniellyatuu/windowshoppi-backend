@@ -107,4 +107,4 @@ venv.bak/
 media
 .vscode
 windowshoppi/settings/crecidential.py
-fixtures
+#fixtures
