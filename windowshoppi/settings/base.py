@@ -158,7 +158,7 @@ DEFAULT_FILE_STORAGE = 'windowshoppi.gcloud.GoogleCloudMediaFileStorage'
 GS_BUCKET_NAME = 'windowshoppi_media'
 GS_PROJECT_ID = 'windowshoppi'
 
-# # for development
+# # for development here
 # GS_BUCKET_NAME = 'windowshoppi_post_pictures'
 # GS_PROJECT_ID = 'location-1549615378220'
 
