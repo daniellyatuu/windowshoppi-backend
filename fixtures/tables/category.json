@@ -1,0 +1,152 @@
+[
+{
+  "model": "master_data.category",
+  "pk": 1,
+  "fields": {
+    "name": "Stores",
+    "visited": 0,
+    "active": true,
+    "date_registered": "2020-08-27T07:42:50.604Z"
+  }
+},
+{
+  "model": "master_data.category",
+  "pk": 2,
+  "fields": {
+    "name": "Restaurants",
+    "visited": 0,
+    "active": true,
+    "date_registered": "2020-08-27T07:59:43.643Z"
+  }
+},
+{
+  "model": "master_data.category",
+  "pk": 3,
+  "fields": {
+    "name": "Beauty & Spa",
+    "visited": 0,
+    "active": true,
+    "date_registered": "2020-08-27T07:59:51.455Z"
+  }
+},
+{
+  "model": "master_data.category",
+  "pk": 4,
+  "fields": {
+    "name": "Hotels",
+    "visited": 0,
+    "active": true,
+    "date_registered": "2020-08-27T07:59:57.409Z"
+  }
+},
+{
+  "model": "master_data.category",
+  "pk": 5,
+  "fields": {
+    "name": "Decor",
+    "visited": 0,
+    "active": true,
+    "date_registered": "2020-08-27T08:00:05.760Z"
+  }
+},
+{
+  "model": "master_data.category",
+  "pk": 6,
+  "fields": {
+    "name": "Real Estate",
+    "visited": 0,
+    "active": true,
+    "date_registered": "2020-08-27T08:00:12.891Z"
+  }
+},
+{
+  "model": "master_data.category",
+  "pk": 7,
+  "fields": {
+    "name": "Cars",
+    "visited": 0,
+    "active": true,
+    "date_registered": "2020-08-27T08:00:17.902Z"
+  }
+},
+{
+  "model": "master_data.category",
+  "pk": 8,
+  "fields": {
+    "name": "Nightlife",
+    "visited": 0,
+    "active": true,
+    "date_registered": "2020-08-27T08:00:28.470Z"
+  }
+},
+{
+  "model": "master_data.category",
+  "pk": 9,
+  "fields": {
+    "name": "Arts",
+    "visited": 0,
+    "active": true,
+    "date_registered": "2020-08-27T08:00:35.452Z"
+  }
+},
+{
+  "model": "master_data.category",
+  "pk": 10,
+  "fields": {
+    "name": "Movies",
+    "visited": 0,
+    "active": true,
+    "date_registered": "2020-08-27T08:00:49.659Z"
+  }
+},
+{
+  "model": "master_data.category",
+  "pk": 11,
+  "fields": {
+    "name": "Architecture",
+    "visited": 0,
+    "active": true,
+    "date_registered": "2020-08-27T08:00:56.080Z"
+  }
+},
+{
+  "model": "master_data.category",
+  "pk": 12,
+  "fields": {
+    "name": "Travel",
+    "visited": 0,
+    "active": true,
+    "date_registered": "2020-08-27T08:01:01.299Z"
+  }
+},
+{
+  "model": "master_data.category",
+  "pk": 13,
+  "fields": {
+    "name": "Event",
+    "visited": 0,
+    "active": true,
+    "date_registered": "2020-08-27T08:01:09.580Z"
+  }
+},
+{
+  "model": "master_data.category",
+  "pk": 14,
+  "fields": {
+    "name": "handymen",
+    "visited": 0,
+    "active": true,
+    "date_registered": "2020-08-27T08:01:16.140Z"
+  }
+},
+{
+  "model": "master_data.category",
+  "pk": 15,
+  "fields": {
+    "name": "Bakery",
+    "visited": 0,
+    "active": true,
+    "date_registered": "2020-08-27T08:01:21.481Z"
+  }
+}
+]
