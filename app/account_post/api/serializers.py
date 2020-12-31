@@ -96,7 +96,6 @@ class AccountPostSerializer(serializers.ModelSerializer):
     group = serializers.CharField(source='account.group')
     account_bio = serializers.CharField(source='account.account_bio')
     business_bio = serializers.CharField(source='account.business_bio')
-    # business_location = serializers.CharField(source='bussiness.location_name')
     account_profile = serializers.CharField(source='account.profile_image')
     call_number = serializers.CharField(
         source='account.user.call_phone_number')
@@ -106,7 +105,7 @@ class AccountPostSerializer(serializers.ModelSerializer):
     class Meta:
         model = AccountPost
         fields = ['id', 'account_id', 'username', 'account_name', 'group', 'account_bio', 'business_bio', 'account_profile',
-                  'categories', 'call_number', 'whatsapp_number', 'caption', 'location_name', 'date_posted', 'post_photos']
+                  'categories', 'call_number', 'whatsapp_number', 'caption', 'location_name', 'latitude', 'longitude', 'date_posted', 'post_photos']
 
 
 class BussinessPostSerializer(serializers.ModelSerializer):  # will be removed
@@ -134,4 +133,5 @@ class UpdatePostSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = AccountPost
-        fields = ['caption', 'active']
+        fields = ['caption', 'location_name',
+                  'latitude', 'longitude', 'active']
