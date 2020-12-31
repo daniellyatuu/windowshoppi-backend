@@ -1,0 +1,16 @@
+[
+{
+  "model": "master_data.country",
+  "pk": 1,
+  "fields": {
+    "name": "Tanzania",
+    "ios2": "tz",
+    "language": "en",
+    "country_code": "+255",
+    "timezone": "Africa/Dar_es_Salaam",
+    "flag": "flag_pics/tz.png",
+    "active": true,
+    "date_registered": "2020-08-27T07:54:21.669Z"
+  }
+}
+]
