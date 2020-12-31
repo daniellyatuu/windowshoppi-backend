@@ -1,7 +1,7 @@
 from .base import *
 from .crecidential import *
 
-print('production server')
+# print('production server')
 
 DATA_UPLOAD_MAX_NUMBER_FIELDS = 10240
 

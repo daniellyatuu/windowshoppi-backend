@@ -1,529 +1,2472 @@
 [
-  {
-    "model": "account.account",
-    "pk": 1,
-    "fields": {
-      "group": 3,
-      "name": "john wear",
-      "user": 16,
-      "profile_image": "",
-      "bio": null,
-      "location_name": "nairobi kenya",
-      "lattitude": 323.2334343,
-      "longitude": 23.0,
-      "date_registered": "2020-10-30T09:57:59.453Z",
-      "date_modified": "2020-10-30T09:57:59.453Z",
-      "active": true
-    }
-  },
-  {
-    "model": "account.account",
-    "pk": 2,
-    "fields": {
-      "group": 3,
-      "name": "john wear",
-      "user": 17,
-      "profile_image": "",
-      "bio": null,
-      "location_name": "nairobi kenya",
-      "lattitude": 323.2334343,
-      "longitude": 23.0,
-      "date_registered": "2020-10-30T09:59:02.791Z",
-      "date_modified": "2020-10-30T09:59:02.791Z",
-      "active": true
-    }
-  },
-  {
-    "model": "account.account",
-    "pk": 3,
-    "fields": {
-      "group": 3,
-      "name": "john wear",
-      "user": 18,
-      "profile_image": "",
-      "bio": null,
-      "location_name": "nairobi kenya",
-      "lattitude": 323.2334343,
-      "longitude": 23.0,
-      "date_registered": "2020-10-30T09:59:56.345Z",
-      "date_modified": "2020-10-30T09:59:56.345Z",
-      "active": true
-    }
-  },
-  {
-    "model": "account.account",
-    "pk": 4,
-    "fields": {
-      "group": 3,
-      "name": "john wear",
-      "user": 19,
-      "profile_image": "",
-      "bio": null,
-      "location_name": "nairobi kenya",
-      "lattitude": 323.2334343,
-      "longitude": 23.0,
-      "date_registered": "2020-10-30T11:01:44.221Z",
-      "date_modified": "2020-10-30T11:01:44.221Z",
-      "active": true
-    }
-  },
-  {
-    "model": "account.account",
-    "pk": 5,
-    "fields": {
-      "group": 3,
-      "name": "new business na",
-      "user": 20,
-      "profile_image": "",
-      "bio": "this is the account bio\n\n\nsome text in here",
-      "location_name": "nairobi kenya",
-      "lattitude": 323.2334343,
-      "longitude": 23.0,
-      "date_registered": "2020-10-30T11:02:22.178Z",
-      "date_modified": "2020-10-30T11:41:35.057Z",
-      "active": true
-    }
-  },
-  {
-    "model": "account.account",
-    "pk": 8,
-    "fields": {
-      "group": 3,
-      "name": "john wear",
-      "user": 21,
-      "profile_image": "",
-      "bio": null,
-      "location_name": "nairobi kenya",
-      "lattitude": null,
-      "longitude": null,
-      "date_registered": "2020-11-05T11:18:55.616Z",
-      "date_modified": "2020-11-05T11:18:55.616Z",
-      "active": true
-    }
-  },
-  {
-    "model": "account.account",
-    "pk": 9,
-    "fields": {
-      "group": 3,
-      "name": "john wear",
-      "user": 22,
-      "profile_image": "",
-      "bio": null,
-      "location_name": null,
-      "lattitude": null,
-      "longitude": null,
-      "date_registered": "2020-11-05T11:24:53.783Z",
-      "date_modified": "2020-11-05T11:24:53.783Z",
-      "active": true
-    }
-  },
-  {
-    "model": "account.account",
-    "pk": 10,
-    "fields": {
-      "group": 3,
-      "name": "name",
-      "user": 23,
-      "profile_image": "",
-      "bio": null,
-      "location_name": null,
-      "lattitude": null,
-      "longitude": null,
-      "date_registered": "2020-11-05T11:27:36.349Z",
-      "date_modified": "2020-11-05T11:27:36.349Z",
-      "active": true
-    }
-  },
-  {
-    "model": "account.account",
-    "pk": 11,
-    "fields": {
-      "group": 3,
-      "name": "name",
-      "user": 24,
-      "profile_image": "",
-      "bio": null,
-      "location_name": null,
-      "lattitude": null,
-      "longitude": null,
-      "date_registered": "2020-11-05T11:30:13.785Z",
-      "date_modified": "2020-11-05T11:30:13.785Z",
-      "active": true
-    }
-  },
-  {
-    "model": "account.account",
-    "pk": 12,
-    "fields": {
-      "group": 3,
-      "name": "name",
-      "user": 25,
-      "profile_image": "",
-      "bio": null,
-      "location_name": null,
-      "lattitude": null,
-      "longitude": null,
-      "date_registered": "2020-11-05T12:05:54.555Z",
-      "date_modified": "2020-11-05T12:05:54.555Z",
-      "active": true
-    }
-  },
-  {
-    "model": "account.account",
-    "pk": 13,
-    "fields": {
-      "group": 3,
-      "name": "name",
-      "user": 26,
-      "profile_image": "",
-      "bio": null,
-      "location_name": null,
-      "lattitude": null,
-      "longitude": null,
-      "date_registered": "2020-11-05T19:34:58.135Z",
-      "date_modified": "2020-11-05T19:34:58.135Z",
-      "active": true
-    }
-  },
-  {
-    "model": "account.account",
-    "pk": 14,
-    "fields": {
-      "group": 3,
-      "name": "name",
-      "user": 27,
-      "profile_image": "",
-      "bio": null,
-      "location_name": null,
-      "lattitude": null,
-      "longitude": null,
-      "date_registered": "2020-11-06T09:45:46.787Z",
-      "date_modified": "2020-11-06T09:45:46.787Z",
-      "active": true
-    }
-  },
-  {
-    "model": "account.account",
-    "pk": 15,
-    "fields": {
-      "group": 3,
-      "name": "name",
-      "user": 28,
-      "profile_image": "",
-      "bio": null,
-      "location_name": null,
-      "lattitude": null,
-      "longitude": null,
-      "date_registered": "2020-11-06T09:49:59.057Z",
-      "date_modified": "2020-11-06T09:49:59.057Z",
-      "active": true
-    }
-  },
-  {
-    "model": "account.account",
-    "pk": 16,
-    "fields": {
-      "group": 3,
-      "name": "name",
-      "user": 29,
-      "profile_image": "",
-      "bio": null,
-      "location_name": null,
-      "lattitude": null,
-      "longitude": null,
-      "date_registered": "2020-11-10T08:04:53.247Z",
-      "date_modified": "2020-11-10T08:04:53.247Z",
-      "active": true
-    }
-  },
-  {
-    "model": "account.account",
-    "pk": 17,
-    "fields": {
-      "group": 3,
-      "name": "name",
-      "user": 30,
-      "profile_image": "",
-      "bio": null,
-      "location_name": null,
-      "lattitude": null,
-      "longitude": null,
-      "date_registered": "2020-11-10T08:18:47.719Z",
-      "date_modified": "2020-11-10T08:18:47.719Z",
-      "active": true
-    }
-  },
-  {
-    "model": "account.account",
-    "pk": 18,
-    "fields": {
-      "group": 3,
-      "name": "name",
-      "user": 31,
-      "profile_image": "",
-      "bio": null,
-      "location_name": null,
-      "lattitude": null,
-      "longitude": null,
-      "date_registered": "2020-11-10T11:27:59.850Z",
-      "date_modified": "2020-11-10T11:27:59.850Z",
-      "active": true
-    }
-  },
-  {
-    "model": "account.account",
-    "pk": 19,
-    "fields": {
-      "group": 3,
-      "name": "name",
-      "user": 32,
-      "profile_image": "",
-      "bio": null,
-      "location_name": null,
-      "lattitude": null,
-      "longitude": null,
-      "date_registered": "2020-11-10T11:33:56.264Z",
-      "date_modified": "2020-11-10T11:33:56.264Z",
-      "active": true
-    }
-  },
-  {
-    "model": "account.account",
-    "pk": 20,
-    "fields": {
-      "group": 3,
-      "name": "name",
-      "user": 33,
-      "profile_image": "",
-      "bio": null,
-      "location_name": null,
-      "lattitude": null,
-      "longitude": null,
-      "date_registered": "2020-11-10T14:04:05.246Z",
-      "date_modified": "2020-11-10T14:04:05.246Z",
-      "active": true
-    }
-  },
-  {
-    "model": "account.account",
-    "pk": 21,
-    "fields": {
-      "group": 3,
-      "name": "new",
-      "user": 34,
-      "profile_image": "",
-      "bio": null,
-      "location_name": null,
-      "lattitude": null,
-      "longitude": null,
-      "date_registered": "2020-11-12T12:40:14.681Z",
-      "date_modified": "2020-11-12T12:40:14.681Z",
-      "active": true
-    }
-  },
-  {
-    "model": "account.account",
-    "pk": 22,
-    "fields": {
-      "group": 3,
-      "name": "lyatuu wear",
-      "user": 35,
-      "profile_image": "",
-      "bio": null,
-      "location_name": null,
-      "lattitude": null,
-      "longitude": null,
-      "date_registered": "2020-11-12T16:28:06.736Z",
-      "date_modified": "2020-11-12T16:28:06.736Z",
-      "active": true
-    }
-  },
-  {
-    "model": "account.account",
-    "pk": 23,
-    "fields": {
-      "group": 3,
-      "name": "cag fashion",
-      "user": 36,
-      "profile_image": "",
-      "bio": null,
-      "location_name": null,
-      "lattitude": null,
-      "longitude": null,
-      "date_registered": "2020-11-12T17:33:32.459Z",
-      "date_modified": "2020-11-12T17:33:32.459Z",
-      "active": true
-    }
-  },
-  {
-    "model": "account.account",
-    "pk": 24,
-    "fields": {
-      "group": 3,
-      "name": "name",
-      "user": 37,
-      "profile_image": "",
-      "bio": null,
-      "location_name": null,
-      "lattitude": null,
-      "longitude": null,
-      "date_registered": "2020-11-12T17:35:13.809Z",
-      "date_modified": "2020-11-12T17:35:13.809Z",
-      "active": true
-    }
-  },
-  {
-    "model": "account.account",
-    "pk": 25,
-    "fields": {
-      "group": 3,
-      "name": "name",
-      "user": 38,
-      "profile_image": "",
-      "bio": null,
-      "location_name": null,
-      "lattitude": null,
-      "longitude": null,
-      "date_registered": "2020-11-12T17:36:40.626Z",
-      "date_modified": "2020-11-12T17:36:40.627Z",
-      "active": true
-    }
-  },
-  {
-    "model": "account.account",
-    "pk": 26,
-    "fields": {
-      "group": 3,
-      "name": "name",
-      "user": 39,
-      "profile_image": "",
-      "bio": null,
-      "location_name": null,
-      "lattitude": null,
-      "longitude": null,
-      "date_registered": "2020-11-12T17:38:57.511Z",
-      "date_modified": "2020-11-12T17:38:57.511Z",
-      "active": true
-    }
-  },
-  {
-    "model": "account.account",
-    "pk": 27,
-    "fields": {
-      "group": 3,
-      "name": "name",
-      "user": 40,
-      "profile_image": "",
-      "bio": null,
-      "location_name": null,
-      "lattitude": null,
-      "longitude": null,
-      "date_registered": "2020-11-12T18:08:55.823Z",
-      "date_modified": "2020-11-12T18:08:55.823Z",
-      "active": true
-    }
-  },
-  {
-    "model": "account.account",
-    "pk": 28,
-    "fields": {
-      "group": 3,
-      "name": "name",
-      "user": 41,
-      "profile_image": "",
-      "bio": null,
-      "location_name": null,
-      "lattitude": null,
-      "longitude": null,
-      "date_registered": "2020-11-12T18:13:29.376Z",
-      "date_modified": "2020-11-12T18:13:29.376Z",
-      "active": true
-    }
-  },
-  {
-    "model": "account.account",
-    "pk": 29,
-    "fields": {
-      "group": 3,
-      "name": "name",
-      "user": 42,
-      "profile_image": "",
-      "bio": null,
-      "location_name": null,
-      "lattitude": null,
-      "longitude": null,
-      "date_registered": "2020-11-12T18:36:39.922Z",
-      "date_modified": "2020-11-12T18:36:39.922Z",
-      "active": true
-    }
-  },
-  {
-    "model": "account.account",
-    "pk": 30,
-    "fields": {
-      "group": 3,
-      "name": "name",
-      "user": 43,
-      "profile_image": "",
-      "bio": null,
-      "location_name": null,
-      "lattitude": null,
-      "longitude": null,
-      "date_registered": "2020-11-13T05:48:34.314Z",
-      "date_modified": "2020-11-13T05:48:34.314Z",
-      "active": true
-    }
-  },
-  {
-    "model": "account.account",
-    "pk": 31,
-    "fields": {
-      "group": 3,
-      "name": "name",
-      "user": 44,
-      "profile_image": "",
-      "bio": null,
-      "location_name": null,
-      "lattitude": null,
-      "longitude": null,
-      "date_registered": "2020-11-13T05:51:41.429Z",
-      "date_modified": "2020-11-13T05:51:41.429Z",
-      "active": true
-    }
-  },
-  {
-    "model": "account.account",
-    "pk": 32,
-    "fields": {
-      "group": 3,
-      "name": "name",
-      "user": 45,
-      "profile_image": "",
-      "bio": null,
-      "location_name": null,
-      "lattitude": null,
-      "longitude": null,
-      "date_registered": "2020-11-13T06:01:30.908Z",
-      "date_modified": "2020-11-13T06:01:30.908Z",
-      "active": true
-    }
-  },
-  {
-    "model": "account.account",
-    "pk": 33,
-    "fields": {
-      "group": 3,
-      "name": "Amri",
-      "user": 46,
-      "profile_image": "",
-      "bio": null,
-      "location_name": null,
-      "lattitude": null,
-      "longitude": null,
-      "date_registered": "2020-11-14T13:24:56.393Z",
-      "date_modified": "2020-11-14T13:24:56.393Z",
-      "active": true
-    }
+{
+  "model": "account.account",
+  "pk": 4,
+  "fields": {
+    "name": "windowshoppi",
+    "user": 5,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": "Discover the best things you want when plan spending.\nFind new ideas to try around you.\nExplore, Discover and Search on windowshoppi App.\nCreate your free business account.",
+    "business_bio": "",
+    "location_name": "Dar es Salaam, Tanzania",
+    "lattitude": -6.792354,
+    "longitude": 39.2083284,
+    "date_registered": "2020-09-01T09:14:52.068Z",
+    "selected": true,
+    "date_modified": "2020-10-05T20:49:59.766Z",
+    "active": true
   }
+},
+{
+  "model": "account.account",
+  "pk": 5,
+  "fields": {
+    "name": "Oscar.Out fits",
+    "user": 6,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": "",
+    "business_bio": "",
+    "location_name": "Dar es Salaam, Dar es Salaam, Tanzania",
+    "lattitude": -6.792354,
+    "longitude": 39.2083284,
+    "date_registered": "2020-09-01T14:28:28.623Z",
+    "selected": true,
+    "date_modified": "2020-09-01T16:39:03.477Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 6,
+  "fields": {
+    "name": "mery new fashion",
+    "user": 7,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": "",
+    "business_bio": "",
+    "location_name": "Isanga, Mbeya, Tanzania",
+    "lattitude": -8.8969449,
+    "longitude": 33.4571588,
+    "date_registered": "2020-09-01T14:39:02.048Z",
+    "selected": true,
+    "date_modified": "2020-09-01T14:40:33.541Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 7,
+  "fields": {
+    "name": "DAN SPORTWEAR TZ",
+    "user": 8,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": "",
+    "business_bio": "",
+    "location_name": "Kariakoo Street, Dar es Salaam, Tanzania",
+    "lattitude": -6.8175435,
+    "longitude": 39.2741406,
+    "date_registered": "2020-09-01T15:56:23.178Z",
+    "selected": true,
+    "date_modified": "2020-09-01T15:57:10.002Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 8,
+  "fields": {
+    "name": "Kea Shopping Centre",
+    "user": 9,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": "Home Decor & Clothes\nInterior Design",
+    "business_bio": "",
+    "location_name": "Kariakoo Street, Dar es Salaam, Tanzania",
+    "lattitude": -6.8175435,
+    "longitude": 39.2741406,
+    "date_registered": "2020-09-01T16:04:57.169Z",
+    "selected": true,
+    "date_modified": "2020-09-02T13:22:15.485Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 9,
+  "fields": {
+    "name": "bright solutions",
+    "user": 10,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": null,
+    "business_bio": "",
+    "location_name": "Kariakoo, Tanzania",
+    "lattitude": -6.8197286,
+    "longitude": 39.2729993,
+    "date_registered": "2020-09-01T16:29:22.785Z",
+    "selected": true,
+    "date_modified": "2020-09-01T16:29:22.785Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 10,
+  "fields": {
+    "name": "allydai mobile phone",
+    "user": 11,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": "Dealers in : Brand New & UK Used Iphone Grad A, Phone Repair, Wireless network devices & Power bank..Free Delivery in Dar ea Salaam Call 0716684499",
+    "business_bio": "",
+    "location_name": "Dar es Salaam, Dar es Salaam, Tanzania",
+    "lattitude": -6.792354,
+    "longitude": 39.2083284,
+    "date_registered": "2020-09-01T16:40:03.525Z",
+    "selected": true,
+    "date_modified": "2020-09-01T16:44:54.896Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 11,
+  "fields": {
+    "name": "officialkibiki_collection",
+    "user": 12,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": "online shopping pata handbags Kali za kijanja za akinadada kwa bei poa kabisaa Wadada wajanja usipitwee   check me  insta@officialkibiki_collection",
+    "business_bio": "",
+    "location_name": "Dar es Salaam, Tanzania",
+    "lattitude": -6.792354,
+    "longitude": 39.2083284,
+    "date_registered": "2020-09-02T07:06:11.021Z",
+    "selected": true,
+    "date_modified": "2020-09-04T22:52:13.568Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 12,
+  "fields": {
+    "name": "Erick classic collection",
+    "user": 13,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": "kwa Mahitaji ya Nguo Aina zote zinapatikana hapa\n\nMikoani Tunatuma kwa gharama za Mteja \nDar es Salaam tunakuletea popote ulipo\n\n+255 719 681052\n+255 747 661818",
+    "business_bio": "",
+    "location_name": "Dar es Salaam, Tanzania",
+    "lattitude": -6.792354,
+    "longitude": 39.2083284,
+    "date_registered": "2020-09-02T07:09:45.535Z",
+    "selected": true,
+    "date_modified": "2020-09-03T02:47:09.487Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 13,
+  "fields": {
+    "name": "Shani Kondo",
+    "user": 14,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": "",
+    "business_bio": "",
+    "location_name": "Tanga Town, Tanga, Tanzania",
+    "lattitude": -5.0888751,
+    "longitude": 39.1023228,
+    "date_registered": "2020-09-02T08:40:50.020Z",
+    "selected": true,
+    "date_modified": "2020-09-02T08:41:29.754Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 14,
+  "fields": {
+    "name": "mkete art",
+    "user": 15,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": "decorative art kwa bei poa\n\nWelcome all",
+    "business_bio": "",
+    "location_name": "Ubungo, Tanzania",
+    "lattitude": -6.7925196,
+    "longitude": 39.20867510000001,
+    "date_registered": "2020-09-02T09:34:14.925Z",
+    "selected": true,
+    "date_modified": "2020-09-02T09:39:03.099Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 15,
+  "fields": {
+    "name": "magari",
+    "user": 16,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": "car branding agent",
+    "business_bio": "",
+    "location_name": "Kinondoni, Tanzania",
+    "lattitude": -6.7053324,
+    "longitude": 39.1127352,
+    "date_registered": "2020-09-02T14:56:53.697Z",
+    "selected": true,
+    "date_modified": "2020-09-21T14:30:39.068Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 16,
+  "fields": {
+    "name": "Swabrina Accessories ????",
+    "user": 17,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": "Karibu ujipatie oud... perfumes...vitezo... lotion ...na makeups aina zote kwa jumla na rejareja\nTunatuma mikoa yote\nCall/whatssapp: 0718166104",
+    "business_bio": "",
+    "location_name": "Dar es Salaam, Tanzania",
+    "lattitude": -6.792354,
+    "longitude": 39.2083284,
+    "date_registered": "2020-09-04T05:06:03.180Z",
+    "selected": true,
+    "date_modified": "2020-09-04T06:18:27.726Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 17,
+  "fields": {
+    "name": "GM Fashions",
+    "user": 18,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": "get the best quality clothes today",
+    "business_bio": "",
+    "location_name": "Kariakoo, Tanzania",
+    "lattitude": -6.8197286,
+    "longitude": 39.2729993,
+    "date_registered": "2020-09-04T13:10:47.462Z",
+    "selected": true,
+    "date_modified": "2020-09-04T13:12:26.152Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 18,
+  "fields": {
+    "name": "Adamu Obadia",
+    "user": 19,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": "",
+    "business_bio": "",
+    "location_name": "Kariakoo Street, Dar es Salaam, Tanzania",
+    "lattitude": -6.8175435,
+    "longitude": 39.2741406,
+    "date_registered": "2020-09-04T22:46:11.574Z",
+    "selected": true,
+    "date_modified": "2020-09-04T22:47:14.555Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 19,
+  "fields": {
+    "name": "fund_tiles",
+    "user": 20,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": null,
+    "business_bio": "",
+    "location_name": "Dar es Salaam, Tanzania",
+    "lattitude": -6.792354,
+    "longitude": 39.2083284,
+    "date_registered": "2020-09-07T06:02:44.569Z",
+    "selected": true,
+    "date_modified": "2020-09-07T06:02:44.569Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 20,
+  "fields": {
+    "name": "Magodorohalisitz",
+    "user": 21,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": "Magodorohalisitz",
+    "business_bio": "",
+    "location_name": "Kinondoni, Tanzania",
+    "lattitude": -6.7053324,
+    "longitude": 39.1127352,
+    "date_registered": "2020-09-07T08:21:48.427Z",
+    "selected": true,
+    "date_modified": "2020-09-07T08:23:14.391Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 21,
+  "fields": {
+    "name": "agrey electronic",
+    "user": 22,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": "ukiagiza kwetu usafiri ni bure na malipo ni baada ya kupata bidhaa yako",
+    "business_bio": "",
+    "location_name": "Dar es Salaam, Tanzania",
+    "lattitude": -6.792354,
+    "longitude": 39.2083284,
+    "date_registered": "2020-09-07T10:51:07.099Z",
+    "selected": true,
+    "date_modified": "2020-09-07T10:52:42.945Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 22,
+  "fields": {
+    "name": "NYIPINGU FURNITURE",
+    "user": 23,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": null,
+    "business_bio": "",
+    "location_name": "Mbagala Zakheim Grounds, Unnamed Road, Dar es Salaam, Tanzania",
+    "lattitude": -6.9149707,
+    "longitude": 39.27274649999999,
+    "date_registered": "2020-09-07T11:12:26.775Z",
+    "selected": true,
+    "date_modified": "2020-09-07T11:12:26.775Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 23,
+  "fields": {
+    "name": "SADRU",
+    "user": 24,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": "njooni",
+    "business_bio": "",
+    "location_name": "Kariakoo Street, Dar es Salaam, Tanzania",
+    "lattitude": -6.8175435,
+    "longitude": 39.2741406,
+    "date_registered": "2020-09-07T12:56:22.236Z",
+    "selected": true,
+    "date_modified": "2020-09-07T12:57:12.583Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 24,
+  "fields": {
+    "name": "dayanapatrick",
+    "user": 25,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": "Dayana Electronics",
+    "business_bio": "",
+    "location_name": "Kariakoo, Tanzania",
+    "lattitude": -6.8197286,
+    "longitude": 39.2729993,
+    "date_registered": "2020-09-07T18:43:50.191Z",
+    "selected": true,
+    "date_modified": "2020-09-09T16:56:59.614Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 25,
+  "fields": {
+    "name": "fakhy_henna",
+    "user": 26,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": null,
+    "business_bio": "",
+    "location_name": "Dar es Salaam, Tanzania",
+    "lattitude": -6.792354,
+    "longitude": 39.2083284,
+    "date_registered": "2020-09-08T07:05:22.372Z",
+    "selected": true,
+    "date_modified": "2020-09-08T07:05:22.372Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 26,
+  "fields": {
+    "name": "Janet cake empire bakery",
+    "user": 27,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": "Tunapika cake aina zote aani za harusi ,send off ,kitchen party , birthday, graduation, engagement n nyinezo????????\n\nPia tunatoa ofa kwa punguzo la asilimai kumi kwa kila cake utakayochkua ..na kwa wateje wa dar tutawafikishia hadi hapo ulipo ????\n\npia tunatengeneza vitafunwa aina zote na kukuletea hadi hapo ulipo????????\n\nunaweza kuweka order kwa nambari ????0627629622\n\nkaribuni Sana????",
+    "business_bio": "",
+    "location_name": "Temeke, Dar es Salam, Tanzania",
+    "lattitude": -6.9487976,
+    "longitude": 39.44502809999999,
+    "date_registered": "2020-09-08T08:02:52.702Z",
+    "selected": true,
+    "date_modified": "2020-09-08T08:07:53.828Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 27,
+  "fields": {
+    "name": "original_earphones_tz",
+    "user": 28,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": null,
+    "business_bio": "",
+    "location_name": "Faykat Tower, Dar es Salaam, Tanzania",
+    "lattitude": -6.7777164,
+    "longitude": 39.2658807,
+    "date_registered": "2020-09-08T08:44:58.379Z",
+    "selected": true,
+    "date_modified": "2020-09-08T08:44:58.379Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 28,
+  "fields": {
+    "name": "jammy onlineshop",
+    "user": 29,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": "",
+    "business_bio": "",
+    "location_name": "Buza Catholic Church, Dar es Salaam, Tanzania",
+    "lattitude": -6.891319699999999,
+    "longitude": 39.2261845,
+    "date_registered": "2020-09-08T17:31:32.624Z",
+    "selected": true,
+    "date_modified": "2020-09-08T17:32:18.885Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 29,
+  "fields": {
+    "name": "kawambwa",
+    "user": 30,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": null,
+    "business_bio": "",
+    "location_name": "Mbagala, Tanzania",
+    "lattitude": -6.8998862,
+    "longitude": 39.26602889999999,
+    "date_registered": "2020-09-09T05:41:09.705Z",
+    "selected": true,
+    "date_modified": "2020-09-09T05:41:09.705Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 30,
+  "fields": {
+    "name": "jayelectronics",
+    "user": 31,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": "free delivery dar es salaam",
+    "business_bio": "",
+    "location_name": "Dar es Salaam, Dar es Salaam, Tanzania",
+    "lattitude": -6.792354,
+    "longitude": 39.2083284,
+    "date_registered": "2020-09-09T11:35:50.808Z",
+    "selected": true,
+    "date_modified": "2020-09-09T11:37:26.169Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 31,
+  "fields": {
+    "name": "MEGASTICKERZ",
+    "user": 32,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": "Wauzaji,watayarishaji na wabandikaji wa sticker Aina zote!",
+    "business_bio": "",
+    "location_name": "Gongo la Mboto, Dar es Salaam, Tanzania",
+    "lattitude": -6.882282799999999,
+    "longitude": 39.156355,
+    "date_registered": "2020-09-09T13:45:07.548Z",
+    "selected": true,
+    "date_modified": "2020-09-09T13:46:24.749Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 32,
+  "fields": {
+    "name": "Chris",
+    "user": 33,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": null,
+    "business_bio": "",
+    "location_name": "Kinondoni, Tanzania",
+    "lattitude": -6.7053324,
+    "longitude": 39.1127352,
+    "date_registered": "2020-09-09T14:20:07.232Z",
+    "selected": true,
+    "date_modified": "2020-09-09T14:20:07.232Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 33,
+  "fields": {
+    "name": "Malkia Baby Shop",
+    "user": 34,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": null,
+    "business_bio": "",
+    "location_name": "Dar es Salaam, Tanzania",
+    "lattitude": -6.792354,
+    "longitude": 39.2083284,
+    "date_registered": "2020-09-09T18:11:19.810Z",
+    "selected": true,
+    "date_modified": "2020-09-09T18:11:19.810Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 34,
+  "fields": {
+    "name": "karonga",
+    "user": 35,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": null,
+    "business_bio": "",
+    "location_name": "Dar es Salaam, Tanzania",
+    "lattitude": -6.792354,
+    "longitude": 39.2083284,
+    "date_registered": "2020-09-09T19:30:58.228Z",
+    "selected": true,
+    "date_modified": "2020-09-09T19:30:58.228Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 35,
+  "fields": {
+    "name": "Muntalubukwa",
+    "user": 36,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": "Don't put all your eggs in one basket",
+    "business_bio": "",
+    "location_name": "Mji Mpya Primary School, Dar es Salaam, Temeke, Tanzania",
+    "lattitude": -6.8674445,
+    "longitude": 39.2668996,
+    "date_registered": "2020-09-10T21:00:02.140Z",
+    "selected": true,
+    "date_modified": "2020-09-10T21:02:23.423Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 36,
+  "fields": {
+    "name": "STAR ELECTRONICS AND TILES",
+    "user": 37,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": "",
+    "business_bio": "",
+    "location_name": "Kariakoo Street, Dar es Salaam, Tanzania",
+    "lattitude": -6.8175435,
+    "longitude": 39.2741406,
+    "date_registered": "2020-09-11T13:16:41.465Z",
+    "selected": true,
+    "date_modified": "2020-09-11T13:19:38.695Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 37,
+  "fields": {
+    "name": "JAYDEN COLLECTION",
+    "user": 38,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": "",
+    "business_bio": "",
+    "location_name": "Dar es Salaam, Tanzania",
+    "lattitude": -6.792354,
+    "longitude": 39.2083284,
+    "date_registered": "2020-09-12T17:58:34.346Z",
+    "selected": true,
+    "date_modified": "2020-09-12T17:59:34.671Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 38,
+  "fields": {
+    "name": "Moud1 store",
+    "user": 39,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": "tunauza nguo na viatu vya kiume na kike.",
+    "business_bio": "",
+    "location_name": "Tabata kimanga Jiandae, Dar es Salaam, Tanzania",
+    "lattitude": -6.825281599999999,
+    "longitude": 39.2060365,
+    "date_registered": "2020-09-12T18:26:47.821Z",
+    "selected": true,
+    "date_modified": "2020-09-12T18:30:19.583Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 39,
+  "fields": {
+    "name": "Welding materials",
+    "user": 40,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": "",
+    "business_bio": "",
+    "location_name": "Kigamboni, Tanzania",
+    "lattitude": -6.8226625,
+    "longitude": 39.30244649999999,
+    "date_registered": "2020-09-12T18:50:42.835Z",
+    "selected": true,
+    "date_modified": "2020-09-12T18:51:46.683Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 40,
+  "fields": {
+    "name": "NEEMA_UNDERWEAR",
+    "user": 41,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": "GOD ONLY CAN JUDGE ME",
+    "business_bio": "",
+    "location_name": "Daressalam, Tanzania",
+    "lattitude": -6.792354,
+    "longitude": 39.2083284,
+    "date_registered": "2020-09-13T03:35:09.476Z",
+    "selected": true,
+    "date_modified": "2020-09-13T03:39:52.651Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 41,
+  "fields": {
+    "name": "shop",
+    "user": 42,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": null,
+    "business_bio": "",
+    "location_name": "Masaki, Dar es Salaam, Tanzania",
+    "lattitude": -6.7473712,
+    "longitude": 39.2816971,
+    "date_registered": "2020-09-13T10:59:39.980Z",
+    "selected": true,
+    "date_modified": "2020-09-13T10:59:39.980Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 42,
+  "fields": {
+    "name": "HamimTarazo",
+    "user": 43,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": "Kwa mahitaji yako ya sakafu ya tarazo na marble kuweka mpya kusafisha au kuirekebisha piga au nichek whatsapp 0784714608/0714002129 nikuhudumie",
+    "business_bio": "",
+    "location_name": "Ubungo, Tanzania",
+    "lattitude": -6.7925196,
+    "longitude": 39.20867510000001,
+    "date_registered": "2020-09-13T15:10:51.380Z",
+    "selected": true,
+    "date_modified": "2020-09-13T15:21:14.861Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 43,
+  "fields": {
+    "name": "Great Sofa beds",
+    "user": 44,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": "Sofa beds and show cases quality bei chee",
+    "business_bio": "",
+    "location_name": "Kijitonyama, Tanzania",
+    "lattitude": -6.774273199999998,
+    "longitude": 39.2334023,
+    "date_registered": "2020-09-14T09:00:22.096Z",
+    "selected": true,
+    "date_modified": "2020-09-14T09:01:31.566Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 44,
+  "fields": {
+    "name": "shazil",
+    "user": 45,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": null,
+    "business_bio": "",
+    "location_name": "Kariakoo, Tanzania",
+    "lattitude": -6.8197286,
+    "longitude": 39.2729993,
+    "date_registered": "2020-09-14T10:01:07.773Z",
+    "selected": true,
+    "date_modified": "2020-09-14T10:01:07.773Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 45,
+  "fields": {
+    "name": "MM IMPO EXPO DUBAI LLC",
+    "user": 46,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": "You Order, We deliver!!",
+    "business_bio": "",
+    "location_name": "Dar es Salaam, Tanzania",
+    "lattitude": -6.792354,
+    "longitude": 39.2083284,
+    "date_registered": "2020-09-14T10:09:12.638Z",
+    "selected": true,
+    "date_modified": "2020-09-14T10:11:46.396Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 46,
+  "fields": {
+    "name": "rasheed",
+    "user": 47,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": "",
+    "business_bio": "",
+    "location_name": "Kariakoo Street, Dar es Salaam, Tanzania",
+    "lattitude": -6.8175435,
+    "longitude": 39.2741406,
+    "date_registered": "2020-09-14T10:27:15.467Z",
+    "selected": true,
+    "date_modified": "2020-09-14T10:27:45.430Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 47,
+  "fields": {
+    "name": "warda cawil",
+    "user": 48,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": null,
+    "business_bio": "",
+    "location_name": "Kariakoo, Tanzania",
+    "lattitude": -6.8197286,
+    "longitude": 39.2729993,
+    "date_registered": "2020-09-14T11:48:55.923Z",
+    "selected": true,
+    "date_modified": "2020-09-14T11:48:55.923Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 48,
+  "fields": {
+    "name": "susu kitchen equipment",
+    "user": 49,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": "susu",
+    "business_bio": "",
+    "location_name": "Dar es Salaam, Tanzania",
+    "lattitude": -6.792354,
+    "longitude": 39.2083284,
+    "date_registered": "2020-09-14T14:01:00.529Z",
+    "selected": true,
+    "date_modified": "2020-09-14T14:01:42.374Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 49,
+  "fields": {
+    "name": "Vitenge quality",
+    "user": 50,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": null,
+    "business_bio": "",
+    "location_name": "Mtaa wa Kongo, Dar es Salaam, Tanzania",
+    "lattitude": -6.822474799999998,
+    "longitude": 39.2743982,
+    "date_registered": "2020-09-14T15:49:53.873Z",
+    "selected": true,
+    "date_modified": "2020-09-14T15:49:53.873Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 50,
+  "fields": {
+    "name": "Timothy",
+    "user": 51,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": null,
+    "business_bio": "",
+    "location_name": "Kimara, Tanzania",
+    "lattitude": -6.803809500000001,
+    "longitude": 39.166302,
+    "date_registered": "2020-09-14T19:07:00.977Z",
+    "selected": true,
+    "date_modified": "2020-09-14T19:07:00.977Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 51,
+  "fields": {
+    "name": "salome mchau",
+    "user": 52,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": "",
+    "business_bio": "",
+    "location_name": "Dar es Salaam, Dar es Salaam, Tanzania",
+    "lattitude": -6.792354,
+    "longitude": 39.2083284,
+    "date_registered": "2020-09-14T19:25:20.552Z",
+    "selected": true,
+    "date_modified": "2020-09-14T19:29:50.346Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 52,
+  "fields": {
+    "name": "Pendeza_na_mehme_online",
+    "user": 53,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": "Karibun kwa mahitaji ya nguo za kiume na za kike zinazo kwenda na wakati kwa bei poa",
+    "business_bio": "",
+    "location_name": "Dar es Salaam, Dar es Salaam, Tanzania",
+    "lattitude": -6.792354,
+    "longitude": 39.2083284,
+    "date_registered": "2020-09-14T19:27:37.651Z",
+    "selected": true,
+    "date_modified": "2020-09-24T14:32:16.319Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 53,
+  "fields": {
+    "name": "m.m creation",
+    "user": 54,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": null,
+    "business_bio": "",
+    "location_name": "Dar es Salaam, Tanzania",
+    "lattitude": -6.792354,
+    "longitude": 39.2083284,
+    "date_registered": "2020-09-14T20:15:02.656Z",
+    "selected": true,
+    "date_modified": "2020-09-14T20:15:02.656Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 54,
+  "fields": {
+    "name": "fashion and designer",
+    "user": 55,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": "",
+    "business_bio": "",
+    "location_name": "Dar es Salaam, Tanzania",
+    "lattitude": -6.792354,
+    "longitude": 39.2083284,
+    "date_registered": "2020-09-14T20:35:41.780Z",
+    "selected": true,
+    "date_modified": "2020-09-14T20:42:49.680Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 55,
+  "fields": {
+    "name": "ika online business",
+    "user": 56,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": "",
+    "business_bio": "",
+    "location_name": "Muheza, Dar es Salaam, Tanzania",
+    "lattitude": -6.822297700000001,
+    "longitude": 39.2701099,
+    "date_registered": "2020-09-15T04:28:47.933Z",
+    "selected": true,
+    "date_modified": "2020-09-15T04:30:21.543Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 56,
+  "fields": {
+    "name": "Vanny classic fashion",
+    "user": 57,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": "Vanny classic fashion",
+    "business_bio": "",
+    "location_name": "Kariakoo, Tanzania",
+    "lattitude": -6.8197286,
+    "longitude": 39.2729993,
+    "date_registered": "2020-09-15T06:57:42.474Z",
+    "selected": true,
+    "date_modified": "2020-09-15T07:08:56.473Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 57,
+  "fields": {
+    "name": "Vanny classic fashion",
+    "user": 58,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": "Pendeza Nas kwa bei nafuuu kabsa karbuni sana tunauza Nguo aina zote za kike na kiume pia kwa mikoani tunatuma Tupo kariakoo mtaa wa mchikichi dar es slam na kwa ware ambao wapo dar es slam unaweza ukaja dukan au ukaletewa had ulipo karbuni sana",
+    "business_bio": "",
+    "location_name": "Kariakoo, Tanzania",
+    "lattitude": -6.8197286,
+    "longitude": 39.2729993,
+    "date_registered": "2020-09-15T07:14:43.349Z",
+    "selected": true,
+    "date_modified": "2020-09-15T07:24:52.263Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 58,
+  "fields": {
+    "name": "vitenge",
+    "user": 59,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": "",
+    "business_bio": "",
+    "location_name": "Congo Street & Aggrey Street, Dar es Salaam, Tanzania",
+    "lattitude": -6.8227603,
+    "longitude": 39.2745036,
+    "date_registered": "2020-09-15T08:50:23.946Z",
+    "selected": true,
+    "date_modified": "2020-09-22T09:54:32.668Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 59,
+  "fields": {
+    "name": "fett_classic_wear_153",
+    "user": 60,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": null,
+    "business_bio": "",
+    "location_name": "Dar es Salaam, Dar es Salaam, Tanzania",
+    "lattitude": -6.792354,
+    "longitude": 39.2083284,
+    "date_registered": "2020-09-15T11:13:37.179Z",
+    "selected": true,
+    "date_modified": "2020-09-15T11:13:37.179Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 60,
+  "fields": {
+    "name": "ANATO TEXTILELTD",
+    "user": 61,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": "",
+    "business_bio": "",
+    "location_name": "Nairobi Road, Arusha, Tanzania",
+    "lattitude": -3.3684788,
+    "longitude": 36.6759574,
+    "date_registered": "2020-09-15T11:36:03.454Z",
+    "selected": true,
+    "date_modified": "2020-09-15T11:58:53.963Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 61,
+  "fields": {
+    "name": "LASTON ONLINE STORE",
+    "user": 62,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": "",
+    "business_bio": "",
+    "location_name": "Dar es Salaam, Tanzania",
+    "lattitude": -6.792354,
+    "longitude": 39.2083284,
+    "date_registered": "2020-09-15T17:18:12.868Z",
+    "selected": true,
+    "date_modified": "2020-09-15T17:30:45.123Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 62,
+  "fields": {
+    "name": "minaa.collections",
+    "user": 63,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": "Watch, Wallet & Glasses\n???? 0743333307 & 0683837663\n????Makumbusho bus stand",
+    "business_bio": "",
+    "location_name": "Makumbusho Bus Stand, Dar es Salaam, Tanzania",
+    "lattitude": -6.778366099999999,
+    "longitude": 39.2471656,
+    "date_registered": "2020-09-16T08:06:20.757Z",
+    "selected": true,
+    "date_modified": "2020-10-17T03:46:49.779Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 63,
+  "fields": {
+    "name": "Madizle furniture",
+    "user": 64,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": "Madizle furniture",
+    "business_bio": "",
+    "location_name": "Manzese Market, Dar es Salaam, Tanzania",
+    "lattitude": -6.800244500000001,
+    "longitude": 39.2351902,
+    "date_registered": "2020-09-16T10:40:04.982Z",
+    "selected": true,
+    "date_modified": "2020-09-16T10:42:00.366Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 64,
+  "fields": {
+    "name": "Smart Home Technology",
+    "user": 65,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": "",
+    "business_bio": "",
+    "location_name": "Mbezi Beach, Dar es Salaam, Tanzania",
+    "lattitude": -6.7165129,
+    "longitude": 39.2219622,
+    "date_registered": "2020-09-16T16:40:50.435Z",
+    "selected": true,
+    "date_modified": "2020-09-16T16:41:52.246Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 65,
+  "fields": {
+    "name": "mr busines",
+    "user": 66,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": "",
+    "business_bio": "",
+    "location_name": "Dar es Salaam University College of Education, Taifa Road, Dar es Salaam, Tanzania",
+    "lattitude": -6.847775999999998,
+    "longitude": 39.273646,
+    "date_registered": "2020-09-16T21:49:41.804Z",
+    "selected": true,
+    "date_modified": "2020-09-16T22:04:57.966Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 66,
+  "fields": {
+    "name": "furniture",
+    "user": 67,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": "Mubaraka furniture",
+    "business_bio": "",
+    "location_name": "Living Water Center Ministry - Dar es Salaam Tanzania, Old Bagamoyo Road, Dar es Salaam, Tanzania",
+    "lattitude": -6.7387871,
+    "longitude": 39.22694479999999,
+    "date_registered": "2020-09-17T05:18:40.380Z",
+    "selected": true,
+    "date_modified": "2020-09-22T09:56:01.015Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 67,
+  "fields": {
+    "name": "online",
+    "user": 68,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": null,
+    "business_bio": "",
+    "location_name": "Temeke, Tanzania",
+    "lattitude": -3.8431818,
+    "longitude": 36.7234908,
+    "date_registered": "2020-09-18T10:46:47.562Z",
+    "selected": true,
+    "date_modified": "2020-09-18T10:46:47.562Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 68,
+  "fields": {
+    "name": "SMART COLLECTION",
+    "user": 69,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": "SMART COLLECTION\nInakuletea nguo zote kuanzia T-shirt, ma shirt, trousers   staff jeans, sendoz, truck na nguo za aina zote za kiume kwa bei nafuu tuu.. Na kwa haraka... Karibu smart collection ujipatie nguo nzury```\nSMART COLLECTION WE SMART U EVERY TIME EVERY DAYð¤©\npia unaweza kujiunga kweny grup letu la wasap kwa taarifa zaidi bonyeza link iliyopo hapo chini kujiunga \nhttps://chat.whatsapp.com/KcmZMczMBZTC09Knzrnbme contact info: +255 718 209 700 and +255 683 937 729",
+    "business_bio": "",
+    "location_name": "Gongo la Mboto, Dar es Salaam, Tanzania",
+    "lattitude": -6.882282799999999,
+    "longitude": 39.156355,
+    "date_registered": "2020-09-18T12:21:18.556Z",
+    "selected": true,
+    "date_modified": "2020-09-20T07:46:05.180Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 69,
+  "fields": {
+    "name": "Amara store",
+    "user": 70,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": null,
+    "business_bio": "",
+    "location_name": "Kimanga, Tanzania",
+    "lattitude": -6.8271223,
+    "longitude": 39.201753,
+    "date_registered": "2020-09-18T19:23:50.247Z",
+    "selected": true,
+    "date_modified": "2020-09-18T19:23:50.247Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 70,
+  "fields": {
+    "name": "shopwithherberts",
+    "user": 71,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": "Nunua electronics(Simu,Camera na Laptops) direct kutoka China kwa bei nafuu kabisa ya soko, delivery ni siku 12 maximum.",
+    "business_bio": "",
+    "location_name": "Tabata kimanga Jiandae, Dar es Salaam, Tanzania",
+    "lattitude": -6.825281599999999,
+    "longitude": 39.2060365,
+    "date_registered": "2020-09-18T19:26:16.789Z",
+    "selected": true,
+    "date_modified": "2020-09-18T19:29:41.758Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 71,
+  "fields": {
+    "name": "monie online shop",
+    "user": 72,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": "MONIE online SHOP tunauza vitu mbalimbali nguo vyombo mashuka nk kwa bei nafuu pia tunaagiza bidhaa toka china kwa bei nafuu karibu ujipatie fursa.tunapatikana makumbusho complex bus stand.",
+    "business_bio": "",
+    "location_name": "Makumbusho Bus Stand, Dar es Salaam, Tanzania",
+    "lattitude": -6.778366099999999,
+    "longitude": 39.2471656,
+    "date_registered": "2020-09-20T12:19:58.143Z",
+    "selected": true,
+    "date_modified": "2020-09-20T17:46:40.428Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 72,
+  "fields": {
+    "name": "kaweza furniture's",
+    "user": 73,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": "Kaweza furniture's.Mw/nyamala komakoma 0712306274 what'sApp & call.na mikoani tunatuma.",
+    "business_bio": "",
+    "location_name": "Mwananyamala Hospital Road, Dar es Salaam, Tanzania",
+    "lattitude": -6.7854378,
+    "longitude": 39.2554306,
+    "date_registered": "2020-09-21T13:42:30.703Z",
+    "selected": true,
+    "date_modified": "2020-11-18T04:09:26.403Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 73,
+  "fields": {
+    "name": "sam_wooden_furnitures",
+    "user": 74,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": "Sam wooden furnitures",
+    "business_bio": "",
+    "location_name": "Arusha, Tanzania",
+    "lattitude": -3.3869254,
+    "longitude": 36.6829927,
+    "date_registered": "2020-09-21T18:26:40.471Z",
+    "selected": true,
+    "date_modified": "2020-09-21T19:00:15.128Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 74,
+  "fields": {
+    "name": "Rommy_outfits",
+    "user": 75,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": "@rommy_outfits\nPENDEZA NA NGUO ZA KIJANJA MTUMBA SAFI GRADE ONE WAREMBO  WAZURIII WANAJUA NINI NAAMAANISHA NI Rommy Outfits WATAKUFANYA UPENDEZEE KWA NA UONEKANE WA KIPEKEE PAMBA KALI KUTOKA MAMTONI TUNAUZA MAGAUNI,SKIRTS,MASHATI BLAUZ OFFSHOULDERS SHIFFONS TSHRTS SKIN JEANS AINA ZOTE COATS \nKWA BEI YA JUMLA NA REJA REJA TUNATUMA MIKOA YOTE KWA UAMINIFU MKUBWA  TUNAPATIKANA IRINGA MJINI KWA MAWASILIANO \nWhatsap noð¬ð© +255653104230\ncallsð 0717070707\n0765002000\n0652600600\nROMMYOUTFITS ndo chimbo pekee la warembo wote",
+    "business_bio": "",
+    "location_name": "Iringa, Tanzania",
+    "lattitude": -7.768059,
+    "longitude": 35.6860723,
+    "date_registered": "2020-09-22T09:17:39.833Z",
+    "selected": true,
+    "date_modified": "2020-09-22T09:25:51.717Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 75,
+  "fields": {
+    "name": "MAGENGELE",
+    "user": 76,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": "magengele",
+    "business_bio": "",
+    "location_name": "Msasani, Dar es Salaam, Tanzania",
+    "lattitude": -6.7473712,
+    "longitude": 39.2816971,
+    "date_registered": "2020-09-22T13:37:07.853Z",
+    "selected": true,
+    "date_modified": "2020-09-22T13:39:41.544Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 76,
+  "fields": {
+    "name": "SUHAILA'S gift shop",
+    "user": 77,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": "",
+    "business_bio": "",
+    "location_name": "Livingstone Street, Dar es Salaam, Tanzania",
+    "lattitude": -6.8200533,
+    "longitude": 39.277904,
+    "date_registered": "2020-09-22T16:44:32.637Z",
+    "selected": true,
+    "date_modified": "2020-09-22T16:49:04.389Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 77,
+  "fields": {
+    "name": "Sumwood",
+    "user": 78,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": "tunapatikana sakina opposite na mile stone",
+    "business_bio": "",
+    "location_name": "Arusha, Tanzania",
+    "lattitude": -3.3869254,
+    "longitude": 36.6829927,
+    "date_registered": "2020-09-23T16:22:42.560Z",
+    "selected": true,
+    "date_modified": "2020-09-23T16:23:56.419Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 78,
+  "fields": {
+    "name": "business",
+    "user": 79,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": "tunafanya delivery mikoan kote na nchi za jilani kalibun sana wateja upate kitu kilicho kuwa bora na quality",
+    "business_bio": "",
+    "location_name": "Dar es Salaam, Dar es Salaam, Tanzania",
+    "lattitude": -6.792354,
+    "longitude": 39.2083284,
+    "date_registered": "2020-09-23T21:30:12.787Z",
+    "selected": true,
+    "date_modified": "2020-09-23T21:32:21.996Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 79,
+  "fields": {
+    "name": "MAHENGE STATIONARY & OFFICE SUPPLIERS",
+    "user": 80,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": "Mahenge Stationary & office supplier",
+    "business_bio": "",
+    "location_name": "Livingstone Street & Kipata Street, Dar es Salaam, Tanzania",
+    "lattitude": -6.8222551,
+    "longitude": 39.278688,
+    "date_registered": "2020-09-24T15:35:54.420Z",
+    "selected": true,
+    "date_modified": "2020-12-11T03:52:22.325Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 80,
+  "fields": {
+    "name": "DALALI",
+    "user": 81,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": null,
+    "business_bio": "",
+    "location_name": "Kinyerezi, Dar es Salaam, Tanzania",
+    "lattitude": -6.851670899999999,
+    "longitude": 39.1595698,
+    "date_registered": "2020-09-24T17:29:13.599Z",
+    "selected": true,
+    "date_modified": "2020-09-24T17:29:13.600Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 81,
+  "fields": {
+    "name": "VITANDA VYA CHUMA",
+    "user": 82,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": "",
+    "business_bio": "",
+    "location_name": "Kinondoni, Tanzania",
+    "lattitude": -6.7053324,
+    "longitude": 39.1127352,
+    "date_registered": "2020-09-25T12:34:44.362Z",
+    "selected": true,
+    "date_modified": "2020-09-25T12:46:38.058Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 82,
+  "fields": {
+    "name": "AYUBU furniture",
+    "user": 83,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": null,
+    "business_bio": "",
+    "location_name": "Keko Magurumbasi, Dar es Salaam, Tanzania",
+    "lattitude": -6.835846000000001,
+    "longitude": 39.2746639,
+    "date_registered": "2020-09-26T10:17:27.566Z",
+    "selected": true,
+    "date_modified": "2020-09-26T10:17:27.566Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 83,
+  "fields": {
+    "name": "Diversity Percentage",
+    "user": 84,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": "NASHUGHURIKA NA MAHITAJI MBALI MBALI YA MWANADAMU,NYUMBA MASHAMBA,MAGARI,UREMBO WA KILA AINA.PIA UKIHITAJI AU UKIWA UNACHO NA UNAHITAJI UTAFUTIWE MTEJA.PIA TUNAUZA NA VITU USED,VILE VILE KAMA UNACHO TUNAKUSAIDIA KUUZA.KARIBU",
+    "business_bio": "",
+    "location_name": "Mbezi Beach, Dar es Salaam, Tanzania",
+    "lattitude": -6.7165129,
+    "longitude": 39.2219622,
+    "date_registered": "2020-09-26T11:49:40.025Z",
+    "selected": true,
+    "date_modified": "2020-10-25T10:47:22.484Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 84,
+  "fields": {
+    "name": "kwa_kiza_handbags",
+    "user": 85,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": "",
+    "business_bio": "",
+    "location_name": "Kariakoo, Tanzania",
+    "lattitude": -6.8197286,
+    "longitude": 39.2729993,
+    "date_registered": "2020-09-26T14:19:52.793Z",
+    "selected": true,
+    "date_modified": "2020-09-26T14:24:07.541Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 85,
+  "fields": {
+    "name": "Hilda cake",
+    "user": 86,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": "",
+    "business_bio": "",
+    "location_name": "Tabata-Bima Bus Station, Dar es Salaam, Tanzania",
+    "lattitude": -6.830945799999999,
+    "longitude": 39.2207622,
+    "date_registered": "2020-09-26T17:48:42.126Z",
+    "selected": true,
+    "date_modified": "2020-09-26T17:49:37.988Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 86,
+  "fields": {
+    "name": "Sharif furniture????????",
+    "user": 87,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": "Karibuni sharif furniture mjipatie furniture aina zote safi pia tunapokea order Aina zote na tunasafirisha miko wasiliana nasi kwa namba 0714393906  Whatsapp pia inatumika ,, Karibuni sana ????????????",
+    "business_bio": "",
+    "location_name": "Keko, Dar es Salaam, Tanzania",
+    "lattitude": -6.8328373,
+    "longitude": 39.2792555,
+    "date_registered": "2020-09-26T19:29:05.434Z",
+    "selected": true,
+    "date_modified": "2020-09-27T02:07:00.221Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 87,
+  "fields": {
+    "name": "MONEYMAKERFURNITURE",
+    "user": 88,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": "",
+    "business_bio": "",
+    "location_name": "Mabibo Mwisho Bus Stand, Dar es Salaam, Tanzania",
+    "lattitude": -6.808873,
+    "longitude": 39.2218566,
+    "date_registered": "2020-09-28T08:49:32.486Z",
+    "selected": true,
+    "date_modified": "2020-09-28T08:50:04.583Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 88,
+  "fields": {
+    "name": "Mattydailyfashion",
+    "user": 89,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": "Formen",
+    "business_bio": "",
+    "location_name": "Dar es Salaam, Tanzania",
+    "lattitude": -6.792354,
+    "longitude": 39.2083284,
+    "date_registered": "2020-09-28T11:23:49.997Z",
+    "selected": true,
+    "date_modified": "2020-09-28T11:43:28.568Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 89,
+  "fields": {
+    "name": "kazi#kazi Aluminium",
+    "user": 90,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": null,
+    "business_bio": "",
+    "location_name": "Maramba Mawili, Dar es Salaam, Tanzania",
+    "lattitude": -6.8193399,
+    "longitude": 39.1149431,
+    "date_registered": "2020-09-28T15:49:30.496Z",
+    "selected": true,
+    "date_modified": "2020-09-28T15:49:30.496Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 90,
+  "fields": {
+    "name": "MENS BOXER",
+    "user": 91,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": "WAUZAJI WA BOXER ZA KIUME .\n\nBOXER MOJA 5000 REJA REJA .\nJUMLA KUANZIA BOXER 12 NI 4000 KILA BOXER MOJA .\n\nCOTTON 100%.\n\nDELIVERY KWA MIKOAN YOTE AVAILABLE.\n\nDELIVERY KWA DAR ES SALAAM NI BURE KUANZIA BOXER 3 KWA MAENEO KARIBUU NA MJINI ...\n\ncall or whatsapp me mda wowote ....0747933459",
+    "business_bio": "",
+    "location_name": "Dar es Salaam, Temeke, Tanzania",
+    "lattitude": -6.792354,
+    "longitude": 39.2083284,
+    "date_registered": "2020-09-29T07:27:50.553Z",
+    "selected": true,
+    "date_modified": "2020-09-29T07:31:44.328Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 91,
+  "fields": {
+    "name": "nalia",
+    "user": 92,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": null,
+    "business_bio": "",
+    "location_name": "Dar es Salaam, Tanzania",
+    "lattitude": -6.792354,
+    "longitude": 39.2083284,
+    "date_registered": "2020-09-29T10:02:15.208Z",
+    "selected": true,
+    "date_modified": "2020-09-29T10:02:15.208Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 92,
+  "fields": {
+    "name": "Johwear",
+    "user": 93,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": "",
+    "business_bio": "",
+    "location_name": "Kariakoo, Tanzania",
+    "lattitude": -6.8197286,
+    "longitude": 39.2729993,
+    "date_registered": "2020-09-29T12:18:25.993Z",
+    "selected": true,
+    "date_modified": "2020-09-29T12:22:13.707Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 93,
+  "fields": {
+    "name": "Josure Fashion",
+    "user": 94,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": "Tunahusika na Kadeti,mashati,pens,vest,mikanda,wallet na track.",
+    "business_bio": "",
+    "location_name": "External bus stop, Nelson Mandela Road, Dar es Salaam, Tanzania",
+    "lattitude": -6.8059137,
+    "longitude": 39.2138271,
+    "date_registered": "2020-09-29T20:11:52.100Z",
+    "selected": true,
+    "date_modified": "2020-09-29T20:14:18.507Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 94,
+  "fields": {
+    "name": "Esperanza Business",
+    "user": 95,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": "",
+    "business_bio": "",
+    "location_name": "Dar es Salaam, Tanzania",
+    "lattitude": -6.792354,
+    "longitude": 39.2083284,
+    "date_registered": "2020-09-29T22:18:12.448Z",
+    "selected": true,
+    "date_modified": "2020-09-29T22:18:42.070Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 95,
+  "fields": {
+    "name": "WEST ELECTRONIC",
+    "user": 96,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": null,
+    "business_bio": "",
+    "location_name": "Zanzibar West District, Tanzania",
+    "lattitude": -6.229813600000001,
+    "longitude": 39.2583293,
+    "date_registered": "2020-09-30T07:27:53.109Z",
+    "selected": true,
+    "date_modified": "2020-09-30T07:27:53.109Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 96,
+  "fields": {
+    "name": "Ray",
+    "user": 97,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": "",
+    "business_bio": "",
+    "location_name": "Dar es Salaam, Tanzania",
+    "lattitude": -6.792354,
+    "longitude": 39.2083284,
+    "date_registered": "2020-09-30T08:41:25.653Z",
+    "selected": true,
+    "date_modified": "2020-09-30T08:42:23.811Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 97,
+  "fields": {
+    "name": "Architectural & structural drawings",
+    "user": 98,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": "",
+    "business_bio": "",
+    "location_name": "Dar es Salaam, Tanzania",
+    "lattitude": -6.792354,
+    "longitude": 39.2083284,
+    "date_registered": "2020-09-30T09:03:52.487Z",
+    "selected": true,
+    "date_modified": "2020-09-30T09:04:49.539Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 98,
+  "fields": {
+    "name": "preciousjoy_collection",
+    "user": 99,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": "",
+    "business_bio": "",
+    "location_name": "Kariakoo, Nyamwezi Street, Dar es Salaam, Ilala, Tanzania",
+    "lattitude": -6.8193049,
+    "longitude": 39.2743972,
+    "date_registered": "2020-10-01T08:00:19.118Z",
+    "selected": true,
+    "date_modified": "2020-10-01T08:02:56.948Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 99,
+  "fields": {
+    "name": "GG computer & Electronic seller",
+    "user": 100,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": "No pain No gain",
+    "business_bio": "",
+    "location_name": "Mbeya, Tanzania",
+    "lattitude": -8.909401399999998,
+    "longitude": 33.4607744,
+    "date_registered": "2020-10-02T15:03:30.968Z",
+    "selected": true,
+    "date_modified": "2020-10-02T15:04:21.450Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 100,
+  "fields": {
+    "name": "Jitas",
+    "user": 101,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": null,
+    "business_bio": "",
+    "location_name": "Mwanza, Tanzania",
+    "lattitude": -2.5164305,
+    "longitude": 32.9174517,
+    "date_registered": "2020-10-02T16:08:08.442Z",
+    "selected": true,
+    "date_modified": "2020-10-02T16:08:08.442Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 101,
+  "fields": {
+    "name": "Watches",
+    "user": 102,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": "Watch dealer",
+    "business_bio": "",
+    "location_name": "Dar es Salaam, Tanzania",
+    "lattitude": -6.792354,
+    "longitude": 39.2083284,
+    "date_registered": "2020-10-03T08:13:59.799Z",
+    "selected": true,
+    "date_modified": "2020-10-03T16:18:15.318Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 102,
+  "fields": {
+    "name": "super",
+    "user": 103,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": null,
+    "business_bio": "",
+    "location_name": "Kariakoo, Tanzania",
+    "lattitude": -6.8197286,
+    "longitude": 39.2729993,
+    "date_registered": "2020-10-03T08:59:58.109Z",
+    "selected": true,
+    "date_modified": "2020-10-03T08:59:58.109Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 103,
+  "fields": {
+    "name": "Nina's Collection",
+    "user": 104,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": "karibuni Nina's Collection kwa bidhaa bora na quality nzuri kwa bei nafuu kabisa\n.\n.\nTunauza jumla na rejareja \n.\n.\nDar delivery ipo na mikoani tunatuma kwa gharama za mteja\n.\n.\nCall/whatsapp 0787483049",
+    "business_bio": "",
+    "location_name": "Temeke, Tanzania",
+    "lattitude": -3.8431818,
+    "longitude": 36.7234908,
+    "date_registered": "2020-10-04T10:24:37.204Z",
+    "selected": true,
+    "date_modified": "2020-10-05T04:01:44.526Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 104,
+  "fields": {
+    "name": "L A M Beauty",
+    "user": 105,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": "Wall Decor\nBeauty Products\nWatches\nKids' Clothes",
+    "business_bio": "",
+    "location_name": "Dar es Salaam, Tanzania",
+    "lattitude": -6.792354,
+    "longitude": 39.2083284,
+    "date_registered": "2020-10-04T14:05:05.035Z",
+    "selected": true,
+    "date_modified": "2020-10-04T14:06:47.047Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 105,
+  "fields": {
+    "name": "Fay OutFit",
+    "user": 106,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": "fay deh shommy",
+    "business_bio": "",
+    "location_name": "Gongo la Mboto, Dar es Salaam, Tanzania",
+    "lattitude": -6.882282799999999,
+    "longitude": 39.156355,
+    "date_registered": "2020-10-04T15:01:23.869Z",
+    "selected": true,
+    "date_modified": "2020-11-03T05:45:28.803Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 106,
+  "fields": {
+    "name": "na outfit",
+    "user": 107,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": null,
+    "business_bio": "",
+    "location_name": "Kimara, Tanzania",
+    "lattitude": -6.803809500000001,
+    "longitude": 39.166302,
+    "date_registered": "2020-10-06T15:45:35.086Z",
+    "selected": true,
+    "date_modified": "2020-10-06T15:45:35.086Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 107,
+  "fields": {
+    "name": "smashbox styles",
+    "user": 108,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": "freshlook",
+    "business_bio": "",
+    "location_name": "Kariakoo Street, Dar es Salaam, Tanzania",
+    "lattitude": -6.8175435,
+    "longitude": 39.2741406,
+    "date_registered": "2020-10-07T06:22:09.247Z",
+    "selected": true,
+    "date_modified": "2020-10-07T09:40:14.919Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 108,
+  "fields": {
+    "name": "njiro Dogo Dogo",
+    "user": 109,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": "",
+    "business_bio": "",
+    "location_name": "Dar es Salaam, Tanzania",
+    "lattitude": -6.792354,
+    "longitude": 39.2083284,
+    "date_registered": "2020-10-07T11:55:55.327Z",
+    "selected": true,
+    "date_modified": "2020-10-07T12:00:20.721Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 109,
+  "fields": {
+    "name": "ASN",
+    "user": 110,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": null,
+    "business_bio": "",
+    "location_name": "Dar es Salaam, Tanzania",
+    "lattitude": -6.792354,
+    "longitude": 39.2083284,
+    "date_registered": "2020-10-07T12:14:17.949Z",
+    "selected": true,
+    "date_modified": "2020-10-07T12:14:17.949Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 110,
+  "fields": {
+    "name": "homedecoration387",
+    "user": 111,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": "",
+    "business_bio": "",
+    "location_name": "Kariakoo, Tanzania",
+    "lattitude": -6.8197286,
+    "longitude": 39.2729993,
+    "date_registered": "2020-10-07T12:55:25.867Z",
+    "selected": true,
+    "date_modified": "2020-10-07T12:58:03.161Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 111,
+  "fields": {
+    "name": "wendy supplier",
+    "user": 112,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": "nauza vitenge na pochi karibuni sana",
+    "business_bio": "",
+    "location_name": "Dar es Salaam, Tanzania",
+    "lattitude": -6.792354,
+    "longitude": 39.2083284,
+    "date_registered": "2020-10-07T20:12:54.868Z",
+    "selected": true,
+    "date_modified": "2020-10-07T20:13:59.399Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 112,
+  "fields": {
+    "name": "Vanny classic fashion",
+    "user": 113,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": "Pendeza nas Kwa bei nafuu Kabsa tunauza jumla Na rejareja Kwa mikoani tunatuma pia Unalipia mzigo Unatumiwa kwenye gar Na kwa wale ambao wako dar es slam derved Ni free had ulipo",
+    "business_bio": "",
+    "location_name": "Kariakoo Street, Dar es Salaam, Tanzania",
+    "lattitude": -6.8175435,
+    "longitude": 39.2741406,
+    "date_registered": "2020-10-09T06:13:24.166Z",
+    "selected": true,
+    "date_modified": "2020-10-09T06:16:16.981Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 113,
+  "fields": {
+    "name": "Bura hair products",
+    "user": 114,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": "www.bonline",
+    "business_bio": "",
+    "location_name": "Dar es Salaam, Tanzania",
+    "lattitude": -6.792354,
+    "longitude": 39.2083284,
+    "date_registered": "2020-10-09T19:22:52.647Z",
+    "selected": true,
+    "date_modified": "2020-10-09T19:24:15.366Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 114,
+  "fields": {
+    "name": "salamaa_designs",
+    "user": 115,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": "",
+    "business_bio": "",
+    "location_name": "Goba Road, Dar es Salaam, Tanzania",
+    "lattitude": -6.7411618,
+    "longitude": 39.1622789,
+    "date_registered": "2020-10-09T20:18:12.229Z",
+    "selected": true,
+    "date_modified": "2020-10-09T20:18:49.943Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 115,
+  "fields": {
+    "name": "nguo na viatu",
+    "user": 116,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": null,
+    "business_bio": "",
+    "location_name": "Dar es Salaam, Tanzania",
+    "lattitude": -6.792354,
+    "longitude": 39.2083284,
+    "date_registered": "2020-10-10T07:57:00.187Z",
+    "selected": true,
+    "date_modified": "2020-10-10T07:57:00.187Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 116,
+  "fields": {
+    "name": "kipande furniture tz",
+    "user": 117,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": "tunauza na kutengeneza",
+    "business_bio": "",
+    "location_name": "Dar es Salaam, Tanzania",
+    "lattitude": -6.792354,
+    "longitude": 39.2083284,
+    "date_registered": "2020-10-10T09:10:39.663Z",
+    "selected": true,
+    "date_modified": "2020-10-10T16:27:11.028Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 117,
+  "fields": {
+    "name": "Optimalsmart",
+    "user": 118,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": "we offer services and products",
+    "business_bio": "",
+    "location_name": "Dar es Salaam, Tanzania",
+    "lattitude": -6.792354,
+    "longitude": 39.2083284,
+    "date_registered": "2020-10-11T04:24:44.816Z",
+    "selected": true,
+    "date_modified": "2020-10-11T04:32:09.853Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 118,
+  "fields": {
+    "name": "tee_shoes",
+    "user": 119,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": "In Sha Allah",
+    "business_bio": "",
+    "location_name": "Dar es Salaam, Dar es Salaam, Tanzania",
+    "lattitude": -6.792354,
+    "longitude": 39.2083284,
+    "date_registered": "2020-10-11T18:35:40.408Z",
+    "selected": true,
+    "date_modified": "2020-10-11T18:36:49.844Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 119,
+  "fields": {
+    "name": "MC KINGU ENTERTAINMENT",
+    "user": 120,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": null,
+    "business_bio": "",
+    "location_name": "Dar es Salaam, Tanzania",
+    "lattitude": -6.792354,
+    "longitude": 39.2083284,
+    "date_registered": "2020-10-12T04:11:06.409Z",
+    "selected": true,
+    "date_modified": "2020-10-12T04:11:06.409Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 120,
+  "fields": {
+    "name": "CHENGULA CONSTRUCTION INDUSTRY",
+    "user": 121,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": "BUILDING DESIGN",
+    "business_bio": "",
+    "location_name": "Mbeya Town Council City Hall, Mbeya, Tanzania",
+    "lattitude": -8.892730100000001,
+    "longitude": 33.4414601,
+    "date_registered": "2020-10-12T10:28:29.004Z",
+    "selected": true,
+    "date_modified": "2020-10-12T10:30:05.333Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 121,
+  "fields": {
+    "name": "jambo_design",
+    "user": 122,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": "",
+    "business_bio": "",
+    "location_name": "Gerezani, Dar es Salaam, Tanzania",
+    "lattitude": -6.818321999999999,
+    "longitude": 39.2875377,
+    "date_registered": "2020-10-12T11:31:41.674Z",
+    "selected": true,
+    "date_modified": "2020-10-12T11:33:26.418Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 122,
+  "fields": {
+    "name": "RAMANI NA UJENZI BEI POA",
+    "user": 123,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": "",
+    "business_bio": "",
+    "location_name": "DSM, Tanzania",
+    "lattitude": -6.792354,
+    "longitude": 39.2083284,
+    "date_registered": "2020-10-13T06:56:53.460Z",
+    "selected": true,
+    "date_modified": "2020-10-13T07:25:19.107Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 123,
+  "fields": {
+    "name": "clever President",
+    "user": 124,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": "https://chat.whatsapp.com/DedMkiVEsOZ2a7LzcvbRXy",
+    "business_bio": "",
+    "location_name": "Kariakoo, Dar es Salaam, Tanzania",
+    "lattitude": -6.8197286,
+    "longitude": 39.2729993,
+    "date_registered": "2020-10-13T19:18:18.591Z",
+    "selected": true,
+    "date_modified": "2020-10-13T19:27:19.270Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 124,
+  "fields": {
+    "name": "no",
+    "user": 125,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": null,
+    "business_bio": "",
+    "location_name": "Bombambili, Songea, Tanzania",
+    "lattitude": -10.663568,
+    "longitude": 35.6522999,
+    "date_registered": "2020-10-17T12:13:09.734Z",
+    "selected": true,
+    "date_modified": "2020-10-17T12:13:09.734Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 125,
+  "fields": {
+    "name": "dayana patrick",
+    "user": 126,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": "dayanaelectronic",
+    "business_bio": "",
+    "location_name": "Kariakoo, Tanzania",
+    "lattitude": -6.819728599999999,
+    "longitude": 39.2729993,
+    "date_registered": "2020-10-21T04:25:40.843Z",
+    "selected": true,
+    "date_modified": "2020-10-21T04:26:56.466Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 126,
+  "fields": {
+    "name": "Earpodstz",
+    "user": 127,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": ">Bidhaa zetu ni UHAKIKA\n>call 0674667881 \n>We offer Free Delivery Dar\n>Mikoani NATUMA kwa BUS nauli ni 5000",
+    "business_bio": "",
+    "location_name": "Tabata kimanga Jiandae, Dar es Salaam, Tanzania",
+    "lattitude": -6.825281599999999,
+    "longitude": 39.2060365,
+    "date_registered": "2020-10-31T20:54:41.315Z",
+    "selected": true,
+    "date_modified": "2020-11-03T05:38:20.528Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 127,
+  "fields": {
+    "name": "Blocko phonetic store",
+    "user": 128,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": "Mobile phone dealers\niPhone_samsung_infinix_Tecno\nFree delivery in Tanzania\nfound at kariakoo_kinondoni_makumbusho",
+    "business_bio": "",
+    "location_name": "Dar es Salaam, Tanzania",
+    "lattitude": -6.792354,
+    "longitude": 39.2083284,
+    "date_registered": "2020-11-11T10:40:51.989Z",
+    "selected": true,
+    "date_modified": "2020-11-11T11:06:32.258Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 128,
+  "fields": {
+    "name": "AMICABLE FASHIONSTYLE",
+    "user": 129,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": "CHIZI WA FASHION MJINI\ncall/whatsap 0766538780\n\nTUPO KARIAKO NARUNGOMBE NA CONGO\nMIKOANI TUNATUMA NA NJE YA NCHI KWA MAKINI KABSA..",
+    "business_bio": "",
+    "location_name": "Kariakoo Street, Dar es Salaam, Tanzania",
+    "lattitude": -6.817543499999999,
+    "longitude": 39.2741406,
+    "date_registered": "2020-11-14T03:18:47.379Z",
+    "selected": true,
+    "date_modified": "2020-11-15T20:11:34.096Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 129,
+  "fields": {
+    "name": "mwanyoka classic fashion",
+    "user": 130,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": null,
+    "business_bio": "",
+    "location_name": "Kariakoo Shops, Narung'ombeStreet, Dar es Salaam, Tanzania",
+    "lattitude": -6.8209901,
+    "longitude": 39.27421529999999,
+    "date_registered": "2020-11-14T16:44:27.042Z",
+    "selected": true,
+    "date_modified": "2020-11-14T16:44:27.042Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 130,
+  "fields": {
+    "name": "Flory_outfits",
+    "user": 131,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": "tunauza bidhaa za mtumba na special kwa bei poa...\n#The best place to shop",
+    "business_bio": "",
+    "location_name": "Mabibo, Dar es Salaam, Tanzania",
+    "lattitude": -6.8090633,
+    "longitude": 39.2219019,
+    "date_registered": "2020-11-25T09:32:28.852Z",
+    "selected": true,
+    "date_modified": "2020-11-25T09:33:41.925Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 131,
+  "fields": {
+    "name": "Dayana Electronics",
+    "user": 132,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": "",
+    "business_bio": "",
+    "location_name": "Kariakoo, Tanzania",
+    "lattitude": -6.819728599999999,
+    "longitude": 39.2729993,
+    "date_registered": "2020-11-25T18:50:23.538Z",
+    "selected": true,
+    "date_modified": "2020-11-25T18:53:48.081Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 132,
+  "fields": {
+    "name": "INFINIX NOTE 7",
+    "user": 133,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": null,
+    "business_bio": "",
+    "location_name": "Dar es Salaam, Tanzania",
+    "lattitude": -6.792354,
+    "longitude": 39.2083284,
+    "date_registered": "2020-12-08T09:16:15.105Z",
+    "selected": true,
+    "date_modified": "2020-12-08T09:16:15.105Z",
+    "active": true
+  }
+},
+{
+  "model": "account.account",
+  "pk": 133,
+  "fields": {
+    "name": "VTENGE",
+    "user": 134,
+    "group": 3,
+    "profile_image": "",
+    "account_bio": null,
+    "business_bio": "",
+    "location_name": "Aggrey Street, Dar es Salaam, Tanzania",
+    "lattitude": -6.8224071,
+    "longitude": 39.2754673,
+    "date_registered": "2020-12-20T10:21:28.433Z",
+    "selected": true,
+    "date_modified": "2020-12-20T10:21:28.433Z",
+    "active": true
+  }
+}
 ]
