@@ -90,7 +90,7 @@ class IsAccountBelongToMe(BasePermission):
     message = "it seems like this account is not yours"
 
     def has_permission(self, request, view):
-        
+
         if 'account_id' in view.kwargs:
             pk = view.kwargs['account_id']
         else:
@@ -100,5 +100,5 @@ class IsAccountBelongToMe(BasePermission):
             account = Account.objects.get(id=pk)
         except:
             return Response()
-        
+
         return request.user == account.user

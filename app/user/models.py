@@ -84,17 +84,23 @@ class User(AbstractBaseUser):
     def is_active(self):
         return self.active
 
+    def phonenumber(self):
+        return self.phone_numbers.all()[0]
+
     def contact_id(self):
-        contact_id = self.phone_numbers.all()[0]
-        return contact_id.id
+        return self.phonenumber().id
 
     def call_phone_number(self):
-        user_contact = self.phone_numbers.all()[0]
-        return user_contact.call
+        return self.phonenumber().call
+
+    def call_iso_code(self):
+        return self.phonenumber().call_iso_code
 
     def whatsapp_phone_number(self):
-        user_contact = self.phone_numbers.all()[0]
-        return user_contact.whatsapp
+        return self.phonenumber().whatsapp
+
+    def whatsapp_iso_code(self):
+        return self.phonenumber().whatsapp_iso_code
 
     class Meta:
         db_table = 'user'
