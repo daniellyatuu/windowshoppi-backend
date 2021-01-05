@@ -1,3 +1,4 @@
+from windowshoppi.settings.base import MEDIA_URL
 from django.contrib.auth.models import Group
 from app.master_data.models import HashTag
 from app.user.models import User
@@ -29,3 +30,7 @@ class Account(models.Model):
 
     def __str__(self):
         return '{}'.format(self.name)
+
+    def profile_photo(self):
+        if(self.profile_image):
+            return MEDIA_URL + str(self.profile_image)

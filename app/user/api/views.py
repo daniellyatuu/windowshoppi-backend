@@ -2,16 +2,18 @@ from .serializers import RegistrationSerializer, UserSerializer, LoginSerializer
 from windowshoppi.api_permissions.permissions import IsExcAdminOrAdmin, IsWindowshopperOrVendorAccount, IsAccountBelongToMe, IsContactBelongToMe
 from windowshoppi.pagination import StandardResultsSetPagination, MediumResultsSetPagination
 from rest_framework.permissions import IsAuthenticated, AllowAny
+from rest_framework.parsers import MultiPartParser, FormParser
 from rest_framework.authentication import TokenAuthentication
 from django.http import HttpResponse, HttpResponseRedirect
 from rest_framework.authtoken.models import Token
+from windowshoppi.settings.base import MEDIA_URL
 from django.shortcuts import get_object_or_404
 from rest_framework.response import Response
 from django.contrib.auth.models import Group
 from rest_framework import status, generics
 from app.master_data.models import Country
-from rest_framework.views import APIView
 from app.user.models import User, Contact
+from rest_framework.views import APIView
 from app.account.models import Account
 from django.urls import reverse
 
@@ -118,6 +120,11 @@ class UpdateWhatsappNumber(generics.UpdateAPIView):
         obj.whatsapp = whatsapp
         obj.save()
 
+        if account.profile_image:
+            profile_image = MEDIA_URL + str(account.profile_image)
+        else:
+            profile_image = None
+
         result = {
             'user_id': user.id,
             'username': user.username,
@@ -127,7 +134,7 @@ class UpdateWhatsappNumber(generics.UpdateAPIView):
             'account_id': account.id,
             'account_name': account.name,
             'group': account.group.name,
-            'profile_image': account.profile_image if account.profile_image else None,
+            'profile_image': profile_image,
             'account_bio': account.account_bio,
             'business_bio': account.business_bio,
             'location_name': account.location_name,
@@ -221,6 +228,11 @@ class UpdateWindowshopperProfile(generics.UpdateAPIView):
             contact.call = call
             contact.save()
 
+            if account.profile_image:
+                profile_image = MEDIA_URL + str(account.profile_image)
+            else:
+                profile_image = None
+
             result = {
                 'user_id': user.id,
                 'username': user.username,
@@ -230,7 +242,7 @@ class UpdateWindowshopperProfile(generics.UpdateAPIView):
                 'account_id': account.id,
                 'account_name': account.name,
                 'group': account.group.name,
-                'profile_image': account.profile_image if account.profile_image else None,
+                'profile_image': profile_image if profile_image else None,
                 'account_bio': account.account_bio,
                 'business_bio': account.business_bio,
                 'location_name': account.location_name,
@@ -327,6 +339,11 @@ class SwitchToBusinessAccount(generics.UpdateAPIView):
             contact.whatsapp = whatsapp
             contact.save()
 
+            if account.profile_image:
+                profile_image = MEDIA_URL + str(account.profile_image)
+            else:
+                profile_image = None
+
             result = {
                 'user_id': user.id,
                 'username': user.username,
@@ -336,7 +353,7 @@ class SwitchToBusinessAccount(generics.UpdateAPIView):
                 'account_id': account.id,
                 'account_name': account.name,
                 'group': account.group.name,
-                'profile_image': account.profile_image if account.profile_image else None,
+                'profile_image': profile_image,
                 'account_bio': account.account_bio,
                 'business_bio': account.business_bio,
                 'location_name': account.location_name,
@@ -434,6 +451,11 @@ class UpdateVendorProfile(generics.UpdateAPIView):
             contact.whatsapp = whatsapp
             contact.save()
 
+            if account.profile_image:
+                profile_image = MEDIA_URL + str(account.profile_image)
+            else:
+                profile_image = None
+
             result = {
                 'user_id': user.id,
                 'username': user.username,
@@ -443,7 +465,7 @@ class UpdateVendorProfile(generics.UpdateAPIView):
                 'account_id': account.id,
                 'account_name': account.name,
                 'group': account.group.name,
-                'profile_image': account.profile_image if account.profile_image else None,
+                'profile_image': profile_image,
                 'account_bio': account.account_bio,
                 'business_bio': account.business_bio,
                 'location_name': account.location_name,

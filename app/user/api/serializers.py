@@ -1,21 +1,19 @@
+from app.user.user_background_tasks import notify_user
+from rest_framework.validators import UniqueValidator
 from app.master_data.models import Country, HashTag
 from rest_framework.authtoken.models import Token
 from django.core.validators import RegexValidator
-from django.contrib.auth.models import Group
+from windowshoppi.settings.base import MEDIA_URL
 from django.contrib.auth import authenticate
+from django.contrib.auth.models import Group
+from app.bussiness.models import Bussiness
 from app.user.models import User, Contact
 from rest_framework import serializers
 from app.account.models import Account
-from app.user.user_background_tasks import notify_user
 from django.utils import timezone
-from rest_framework.validators import UniqueValidator
-
-from app.bussiness.models import Bussiness
 
 
 class RegistrationSerializer(serializers.ModelSerializer):
-    # group = serializers.PrimaryKeyRelatedField(
-    #     queryset=Group.objects.all(), required=False)
     group = serializers.SlugRelatedField(
         queryset=Group.objects.all(), slug_field='name')
     call = serializers.CharField(max_length=17, validators=[RegexValidator(
@@ -174,6 +172,11 @@ class LoginSerializer(serializers.Serializer):
             # get user phone numbers
             phone_number = user.phone_numbers.all()[0]
 
+            if account.profile_image:
+                profile_image = MEDIA_URL + str(account.profile_image)
+            else:
+                profile_image = None
+
             return {
                 'result': 'success',  # will be removed
 
@@ -256,6 +259,11 @@ class LoginSerializerOld(serializers.Serializer):  # will be removed
         # get user bussiness
         bussiness = user.user_account.all()[0]
 
+        if bussiness.profile_image:
+            profile_image = MEDIA_URL + str(bussiness.profile_image)
+        else:
+            profile_image = None
+
         return {
             'token': token,
             'business_id': bussiness.id,
@@ -269,81 +277,6 @@ class LoginSerializerOld(serializers.Serializer):  # will be removed
         }
 
 
-# class UserLoginSerializer(serializers.Serializer):
-#     """
-#     Authenticates an existing user.
-#     Email and password are required.
-#     Returns a JSON web token.
-#     """
-
-#     username = serializers.CharField(write_only=True)
-#     password = serializers.CharField(max_length=128, write_only=True)
-#     token = serializers.CharField(max_length=255, read_only=True)
-
-#     def validate(self, data):
-
-#         username = data.get('username', None)
-#         password = data.get('password', None)
-
-#         if username is None:
-#             raise serializers.ValidationError(
-#                 'username is required to log in.'
-#             )
-
-#         if password is None:
-#             raise serializers.ValidationError(
-#                 'A password is required to log in.'
-#             )
-
-#         user = authenticate(username=username, password=password)
-
-#         if user is None:
-#             raise serializers.ValidationError(
-#                 'invalid_account'
-#             )
-
-#         if not user.is_active:
-#             raise serializers.ValidationError(
-#                 'This user has been deactivated.'
-#             )
-
-#         if(user.group is not None):
-
-#             # check if user is vendor
-#             if(user.group.name == 'vendor'):
-
-#                 # get user token
-#                 token = Token.objects.get(user=user).key
-
-#                 return {
-#                     'token': token,
-#                 }
-#             else:
-#                 raise serializers.ValidationError(
-#                     'access_to_vendor_only.'
-#                 )
-
-#         else:
-#             raise serializers.ValidationError(
-#                 'access_to_vendor_only.'
-#             )
-
-
-# class AccountSerializer(serializers.ModelSerializer):
-#     group = serializers.CharField(source='group.name')
-
-#     class Meta:
-#         model = Account
-#         fields = ['name', 'group', 'profile_image', 'account_bio',
-#                   'business_bio', 'location_name', 'date_registered', 'selected']
-
-
-# class ContactSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = Contact
-#         fields = ['call', 'whatsapp']
-
-
 class UserSerializer(serializers.ModelSerializer):
     group = serializers.CharField(source='group.name')
     username = serializers.CharField(source='user.username')
@@ -354,12 +287,14 @@ class UserSerializer(serializers.ModelSerializer):
     account_name = serializers.CharField(source='name')
     contact_id = serializers.IntegerField(source='user.contact_id')
     call = serializers.CharField(source='user.call_phone_number')
+    call_iso_code = serializers.CharField(source='user.call_iso_code')
+    whatsapp_iso_code = serializers.CharField(source='user.whatsapp_iso_code')
     whatsapp = serializers.CharField(source='user.whatsapp_phone_number')
 
     class Meta:
         model = Account
         fields = ['user_id', 'username', 'first_name', 'last_name', 'email', 'account_id', 'account_name', 'group',
-                  'profile_image', 'account_bio', 'business_bio', 'location_name', 'contact_id', 'call', 'whatsapp', 'date_registered']
+                  'profile_image', 'account_bio', 'business_bio', 'location_name', 'contact_id', 'call', 'call_iso_code', 'whatsapp', 'whatsapp_iso_code', 'date_registered']
 
 
 # class UserSerializer(serializers.ModelSerializer):

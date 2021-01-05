@@ -96,7 +96,7 @@ class AccountPostSerializer(serializers.ModelSerializer):
     group = serializers.CharField(source='account.group')
     account_bio = serializers.CharField(source='account.account_bio')
     business_bio = serializers.CharField(source='account.business_bio')
-    account_profile = serializers.CharField(source='account.profile_image')
+    account_profile = serializers.CharField(source='account.profile_photo')
     call_number = serializers.CharField(
         source='account.user.call_phone_number')
     whatsapp_number = serializers.CharField(
@@ -114,7 +114,7 @@ class BussinessPostSerializer(serializers.ModelSerializer):  # will be removed
     user_name = serializers.CharField(source='account.user')
     account_name = serializers.CharField(source='account.name')
     business_location = serializers.CharField(source='account.location_name')
-    account_profile = serializers.CharField(source='account.profile_image')
+    account_profile = serializers.CharField(source='account.profile_photo')
     call_number = serializers.CharField(
         source='account.user.call_phone_number')
     whatsapp_number = serializers.CharField(
