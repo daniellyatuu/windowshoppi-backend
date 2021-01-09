@@ -12,6 +12,7 @@ from app.account.models import Account
 from django.utils import timezone
 from datetime import timedelta
 from itertools import chain
+import datetime
 import random
 
 
@@ -162,8 +163,20 @@ class AccountPostListView(generics.ListAPIView):
         # queryset1 = AccountPost.objects.filter(
         #     active=True, date_posted__gte=time_range)
 
+        # filter by year
+        year = '2021'
+
+        from_year = datetime.datetime.strptime(year, "%Y")
+
+        # convert naive datetime into datetime with timezone
+        current_tz = timezone.get_current_timezone()
+
+        new_from_year = current_tz.localize(from_year)
+
         queryset2 = AccountPost.objects.filter(
-            active=True).order_by('?')
+            active=True, date_posted__gte=new_from_year).order_by('?')
+
+        # date_posted__gte=datetime.date(2021, 1, 1)
 
         # result_queryset = list(chain(queryset1, queryset2))
 
