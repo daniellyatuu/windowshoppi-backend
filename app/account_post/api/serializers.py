@@ -1,7 +1,9 @@
+from app.account_post.account_post_background_tasks import verify_url
+from app.account_post.models import AccountPost, PostImage
 from rest_framework import serializers
 from app.account.models import Account
 from rest_framework import status
-from app.account_post.models import AccountPost, PostImage
+from django.utils import timezone
 
 
 class CreatePostSerializer(serializers.ModelSerializer):
@@ -10,12 +12,14 @@ class CreatePostSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = AccountPost
-        fields = ['account', 'caption', 'location_name',
+        fields = ['account', 'caption', 'url', 'url_action_text', 'location_name',
                   'latitude', 'longitude', 'filename']
 
     def create(self, validated_data):
         account = self.validated_data['account']
         caption = self.validated_data['caption']
+        url = self.validated_data.get('url', None)
+        url_action_text = self.validated_data.get('url_action_text', None)
         location_name = self.validated_data.get('location_name', None)
         latitude = self.validated_data.get('latitude', None)
         longitude = self.validated_data.get('longitude', None)
@@ -28,12 +32,17 @@ class CreatePostSerializer(serializers.ModelSerializer):
 
         # save post
         windowshoppi_post = AccountPost.objects.create(
-            account=account, caption=caption, location_name=location_name, latitude=latitude, longitude=longitude)
+            account=account, caption=caption, url=url, url_action_text=url_action_text, location_name=location_name, latitude=latitude, longitude=longitude)
 
         try:
             for image in filename:
                 PostImage.objects.create(
                     post=windowshoppi_post, filename=image)
+
+            # check if url is saved
+            if windowshoppi_post.url:
+                # verify url
+                verify_url(windowshoppi_post.id)
 
             return {
                 'id': windowshoppi_post.id
@@ -105,7 +114,7 @@ class AccountPostSerializer(serializers.ModelSerializer):
     class Meta:
         model = AccountPost
         fields = ['id', 'account_id', 'username', 'account_name', 'group', 'account_bio', 'business_bio', 'account_profile',
-                  'categories', 'call_number', 'whatsapp_number', 'caption', 'location_name', 'latitude', 'longitude', 'date_posted', 'post_photos']
+                  'categories', 'call_number', 'whatsapp_number', 'caption', 'url', 'url_action_text', 'is_url_valid', 'location_name', 'latitude', 'longitude', 'date_posted', 'post_photos']
 
 
 class BussinessPostSerializer(serializers.ModelSerializer):  # will be removed
