@@ -6,6 +6,9 @@ class AccountPostAdmin(admin.ModelAdmin):
     list_display = [
         'account',
         'caption',
+        'url',
+        'url_action_text',
+        'is_url_valid',
         'active',
         'error_happened_on_uploading_image',
         'date_posted',

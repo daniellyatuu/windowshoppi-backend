@@ -29,7 +29,11 @@ class CreatePostView(APIView):
 
         data = self.request.data
 
+        # print(data)
+
         serializer = self.serializer_class(data=data)
+
+        print(serializer.is_valid)
 
         if serializer.is_valid():
             result = serializer.save()
