@@ -176,7 +176,11 @@ class RemoveProfilePictureView(APIView):
             'location_name': account.location_name,
             'contact_id': contact.id,
             'call': contact.call,
+            'call_iso_code': contact.call_iso_code,
+            'call_dial_code': contact.call_dial_code,
             'whatsapp': contact.whatsapp,
+            'whatsapp_iso_code': contact.whatsapp_iso_code,
+            'whatsapp_dial_code': contact.whatsapp_dial_code,
             'date_registered': account.date_registered,
         }
         return Response(result)
