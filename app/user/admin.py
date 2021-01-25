@@ -38,10 +38,12 @@ class UserAdmin(BaseUserAdmin):
 class ContactAdmin(admin.ModelAdmin):
     list_display = [
         'user',
-        'call',
         'call_iso_code',
-        'whatsapp',
+        'call_dial_code',
+        'call',
         'whatsapp_iso_code',
+        'whatsapp_dial_code',
+        'whatsapp',
         'date_added',
         'date_modified',
     ]

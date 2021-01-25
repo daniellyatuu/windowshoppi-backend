@@ -96,11 +96,17 @@ class User(AbstractBaseUser):
     def call_iso_code(self):
         return self.phonenumber().call_iso_code
 
+    def call_dial_code(self):
+        return self.phonenumber().call_dial_code
+
     def whatsapp_phone_number(self):
         return self.phonenumber().whatsapp
 
     def whatsapp_iso_code(self):
         return self.phonenumber().whatsapp_iso_code
+
+    def whatsapp_dial_code(self):
+        return self.phonenumber().whatsapp_dial_code
 
     class Meta:
         db_table = 'user'
@@ -119,15 +125,17 @@ def create_auth_token(sender, instance=None, created=False, **kwargs):
 
 class Contact(models.Model):
     phone_regex = RegexValidator(
-        regex=r'^\+?1?\d{9,15}$', message="Phone number must be entered in the format: '+999999999'. Up to 15 digits allowed.")
+        regex=r'^\+?1?\d{8,15}$', message="Phone number must be entered in the format: '+999999999'. Up to 15 digits allowed.")
 
     user = models.ForeignKey(
         User, related_name="phone_numbers", on_delete=models.CASCADE)
     call = models.CharField(validators=[phone_regex], max_length=17)
     call_iso_code = models.CharField(max_length=10, blank=True, null=True)
+    call_dial_code = models.CharField(max_length=10, blank=True, null=True)
     whatsapp = models.CharField(
         validators=[phone_regex], max_length=17, blank=True, null=True)
     whatsapp_iso_code = models.CharField(max_length=10, blank=True, null=True)
+    whatsapp_dial_code = models.CharField(max_length=10, blank=True, null=True)
     date_added = models.DateTimeField(auto_now_add=True)
     date_modified = models.DateTimeField(auto_now=True)
 

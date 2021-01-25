@@ -75,14 +75,6 @@ class UserData(generics.RetrieveAPIView):
         return obj
 
 
-# class UserList(generics.ListAPIView):
-#     queryset = User.objects.all()
-#     serializer_class = UserSerializer
-#     authentication_classes = [TokenAuthentication]
-#     permission_classes = [IsAuthenticated, IsExcAdminOrAdmin]
-#     pagination_class = StandardResultsSetPagination
-
-
 class ValidateUsername(APIView):
     def post(self, request, format=None):
         data = self.request.data
@@ -116,8 +108,12 @@ class UpdateWhatsappNumber(generics.UpdateAPIView):
 
         # update whatsapp number
         whatsapp = request.data.get('whatsapp')
+        whatsapp_iso_code = request.data.get('whatsapp_iso_code')
+        whatsapp_dial_code = request.data.get('whatsapp_dial_code')
 
         obj.whatsapp = whatsapp
+        obj.whatsapp_iso_code = whatsapp_iso_code
+        obj.whatsapp_dial_code = whatsapp_dial_code
         obj.save()
 
         if account.profile_image:
@@ -140,7 +136,11 @@ class UpdateWhatsappNumber(generics.UpdateAPIView):
             'location_name': account.location_name,
             'contact_id': obj.id,
             'call': obj.call,
+            'call_iso_code': obj.call_iso_code,
+            'call_dial_code': obj.call_dial_code,
             'whatsapp': obj.whatsapp,
+            'whatsapp_iso_code': obj.whatsapp_iso_code,
+            'whatsapp_dial_code': obj.whatsapp_dial_code,
             'date_registered': account.date_registered,
         }
         return Response(result)
@@ -224,8 +224,12 @@ class UpdateWindowshopperProfile(generics.UpdateAPIView):
 
             # get contact data from form
             call = data.get('call')
+            call_iso_code = data.get('call_iso_code')
+            call_dial_code = data.get('call_dial_code')
 
             contact.call = call
+            contact.call_iso_code = call_iso_code
+            contact.call_dial_code = call_dial_code
             contact.save()
 
             if account.profile_image:
@@ -248,7 +252,11 @@ class UpdateWindowshopperProfile(generics.UpdateAPIView):
                 'location_name': account.location_name,
                 'contact_id': contact.id,
                 'call': contact.call,
+                'call_iso_code': contact.call_iso_code,
+                'call_dial_code': contact.call_dial_code,
                 'whatsapp': contact.whatsapp,
+                'whatsapp_iso_code': contact.whatsapp_iso_code,
+                'whatsapp_dial_code': contact.whatsapp_dial_code,
                 'date_registered': account.date_registered,
             }
             return Response(result)
@@ -333,10 +341,18 @@ class SwitchToBusinessAccount(generics.UpdateAPIView):
 
             # get contact data from form
             call = data.get('call')
+            call_iso_code = data.get('call_iso_code')
+            call_dial_code = data.get('call_dial_code')
             whatsapp = data.get('whatsapp')
+            whatsapp_iso_code = data.get('whatsapp_iso_code')
+            whatsapp_dial_code = data.get('whatsapp_dial_code')
 
             contact.call = call
+            contact.call_iso_code = call_iso_code
+            contact.call_dial_code = call_dial_code
             contact.whatsapp = whatsapp
+            contact.whatsapp_iso_code = whatsapp_iso_code
+            contact.whatsapp_dial_code = whatsapp_dial_code
             contact.save()
 
             if account.profile_image:
@@ -359,7 +375,11 @@ class SwitchToBusinessAccount(generics.UpdateAPIView):
                 'location_name': account.location_name,
                 'contact_id': contact.id,
                 'call': contact.call,
+                'call_iso_code': contact.call_iso_code,
+                'call_dial_code': contact.call_dial_code,
                 'whatsapp': contact.whatsapp,
+                'whatsapp_iso_code': contact.whatsapp_iso_code,
+                'whatsapp_dial_code': contact.whatsapp_dial_code,
                 'date_registered': account.date_registered,
             }
             return Response(result)
@@ -445,10 +465,18 @@ class UpdateVendorProfile(generics.UpdateAPIView):
 
             # get contact data from form
             call = data.get('call')
+            call_iso_code = data.get('call_iso_code')
+            call_dial_code = data.get('call_dial_code')
             whatsapp = data.get('whatsapp')
+            whatsapp_iso_code = data.get('whatsapp_iso_code')
+            whatsapp_dial_code = data.get('whatsapp_dial_code')
 
             contact.call = call
+            contact.call_iso_code = call_iso_code
+            contact.call_dial_code = call_dial_code
             contact.whatsapp = whatsapp
+            contact.whatsapp_iso_code = whatsapp_iso_code
+            contact.whatsapp_dial_code = whatsapp_dial_code
             contact.save()
 
             if account.profile_image:
@@ -471,7 +499,11 @@ class UpdateVendorProfile(generics.UpdateAPIView):
                 'location_name': account.location_name,
                 'contact_id': contact.id,
                 'call': contact.call,
+                'call_iso_code': contact.call_iso_code,
+                'call_dial_code': contact.call_dial_code,
                 'whatsapp': contact.whatsapp,
+                'whatsapp_iso_code': contact.whatsapp_iso_code,
+                'whatsapp_dial_code': contact.whatsapp_dial_code,
                 'date_registered': account.date_registered,
             }
             return Response(result)

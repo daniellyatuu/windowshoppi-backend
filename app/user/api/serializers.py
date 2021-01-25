@@ -17,13 +17,14 @@ class RegistrationSerializer(serializers.ModelSerializer):
     group = serializers.SlugRelatedField(
         queryset=Group.objects.all(), slug_field='name')
     call = serializers.CharField(max_length=17, validators=[RegexValidator(
-        regex=r'^\+?1?\d{9,15}$', message="Phone number must be entered in the format: '+999999999'. Up to 15 digits allowed.")])
+        regex=r'^\+?1?\d{8,15}$', message="Phone number must be entered in the format: '+999999999'. Up to 15 digits allowed.")])
     call_iso_code = serializers.CharField(max_length=10)
+    call_dial_code = serializers.CharField(max_length=10)
 
     class Meta:
         model = User
         fields = ['first_name', 'last_name', 'username',
-                  'email', 'password', 'group', 'call', 'call_iso_code']
+                  'email', 'password', 'group', 'call', 'call_iso_code', 'call_dial_code']
         extra_kwargs = {
             'password': {'write_only': True}
         }
@@ -37,6 +38,7 @@ class RegistrationSerializer(serializers.ModelSerializer):
         group = self.validated_data.get('group', None)
         call = self.validated_data['call']
         call_iso_code = self.validated_data.get('call_iso_code')
+        call_dial_code = self.validated_data.get('call_dial_code')
 
         # validation
         if firstname == None:
@@ -73,7 +75,7 @@ class RegistrationSerializer(serializers.ModelSerializer):
 
         # save contact
         contact = Contact.objects.create(
-            user=windowshoppi_user, call=call, call_iso_code=call_iso_code)
+            user=windowshoppi_user, call=call, call_iso_code=call_iso_code, call_dial_code=call_dial_code)
 
         # # notify user
         # notify_user(windowshoppi_user.id, schedule=timezone.now())
@@ -97,7 +99,11 @@ class RegistrationSerializer(serializers.ModelSerializer):
             'location_name': account.location_name,
             'contact_id': contact.id,
             'call': contact.call,
+            'call_iso_code': contact.call_iso_code,
+            'call_dial_code': contact.call_dial_code,
             'whatsapp': contact.whatsapp,
+            'whatsapp_iso_code': contact.whatsapp_iso_code,
+            'whatsapp_dial_code': contact.whatsapp_dial_code,
             'date_registered': account.date_registered,
         }
 
@@ -129,7 +135,11 @@ class LoginSerializer(serializers.Serializer):
     location_name = serializers.CharField(max_length=255, read_only=True)
     contact_id = serializers.IntegerField(read_only=True)
     call = serializers.CharField(max_length=255, read_only=True)
+    call_iso_code = serializers.CharField(max_length=10, read_only=True)
+    call_dial_code = serializers.CharField(max_length=10, read_only=True)
     whatsapp = serializers.CharField(max_length=255, read_only=True)
+    whatsapp_iso_code = serializers.CharField(max_length=10, read_only=True)
+    whatsapp_dial_code = serializers.CharField(max_length=10, read_only=True)
 
     # will be removed later on
     result = serializers.CharField(max_length=10, read_only=True)
@@ -195,7 +205,11 @@ class LoginSerializer(serializers.Serializer):
                 'location_name': account.location_name,
                 'contact_id': phone_number.id,
                 'call': phone_number.call,
+                'call_iso_code': phone_number.call_iso_code,
+                'call_dial_code': phone_number.call_dial_code,
                 'whatsapp': phone_number.whatsapp,
+                'whatsapp_iso_code': phone_number.whatsapp_iso_code,
+                'whatsapp_dial_code': phone_number.whatsapp_dial_code,
                 'date_registered': account.date_registered,
             }
         else:
@@ -288,23 +302,16 @@ class UserSerializer(serializers.ModelSerializer):
     contact_id = serializers.IntegerField(source='user.contact_id')
     call = serializers.CharField(source='user.call_phone_number')
     call_iso_code = serializers.CharField(source='user.call_iso_code')
-    whatsapp_iso_code = serializers.CharField(source='user.whatsapp_iso_code')
+    call_dial_code = serializers.CharField(source='user.call_dial_code')
     whatsapp = serializers.CharField(source='user.whatsapp_phone_number')
+    whatsapp_iso_code = serializers.CharField(source='user.whatsapp_iso_code')
+    whatsapp_dial_code = serializers.CharField(
+        source='user.whatsapp_dial_code')
 
     class Meta:
         model = Account
-        fields = ['user_id', 'username', 'first_name', 'last_name', 'email', 'account_id', 'account_name', 'group',
-                  'profile_image', 'account_bio', 'business_bio', 'location_name', 'contact_id', 'call', 'call_iso_code', 'whatsapp', 'whatsapp_iso_code', 'date_registered']
-
-
-# class UserSerializer(serializers.ModelSerializer):
-#     user_account = AccountSerializer(many=True)
-#     phone_numbers = ContactSerializer(many=True)
-
-#     class Meta:
-#         model = User
-#         fields = ['id', 'username', 'first_name', 'last_name',
-#                   'email', 'date_joined', 'user_account', 'phone_numbers']
+        fields = ['user_id', 'username', 'first_name', 'last_name', 'email', 'account_id', 'account_name', 'group', 'profile_image', 'account_bio', 'business_bio',
+                  'location_name', 'contact_id', 'call', 'call_iso_code', 'call_dial_code', 'whatsapp', 'whatsapp_iso_code', 'whatsapp_dial_code', 'date_registered']
 
 
 class UpdateAccountSerializer(serializers.ModelSerializer):
@@ -375,14 +382,16 @@ class UpdateWindowshopperProfileSerializer(serializers.ModelSerializer):
     username = serializers.CharField(max_length=255)
     call = serializers.CharField(max_length=17, validators=[RegexValidator(
         regex=r'^\+?1?\d{9,15}$', message="Phone number must be entered in the format: '+999999999'. Up to 15 digits allowed.")])
+    call_iso_code = serializers.CharField(max_length=10)
+    call_dial_code = serializers.CharField(max_length=10)
     account_bio = serializers.CharField(
         max_length=5000, allow_blank=True, required=False)
     email = serializers.EmailField(max_length=255, required=False)
 
     class Meta:
         model = User
-        fields = ['first_name', 'last_name',
-                  'username', 'call', 'account_bio', 'email']
+        fields = ['first_name', 'last_name', 'username', 'call',
+                  'call_iso_code', 'call_dial_code', 'account_bio', 'email']
 
 
 class UpdateVendorProfileSerializer(serializers.ModelSerializer):
@@ -393,16 +402,20 @@ class UpdateVendorProfileSerializer(serializers.ModelSerializer):
     business_bio = serializers.CharField(max_length=30)
     call = serializers.CharField(max_length=17, validators=[RegexValidator(
         regex=r'^\+?1?\d{9,15}$', message="Phone number must be entered in the format: '+999999999'. Up to 15 digits allowed.")])
+    call_iso_code = serializers.CharField(max_length=10)
+    call_dial_code = serializers.CharField(max_length=10)
     whatsapp = serializers.CharField(max_length=17, required=False, validators=[RegexValidator(
         regex=r'^\+?1?\d{9,15}$', message="Phone number must be entered in the format: '+999999999'. Up to 15 digits allowed.")])
+    whatsapp_iso_code = serializers.CharField(max_length=10, required=False)
+    whatsapp_dial_code = serializers.CharField(max_length=10, required=False)
     account_bio = serializers.CharField(
         max_length=5000, allow_blank=True, required=False)
     email = serializers.EmailField(max_length=255, required=False)
 
     class Meta:
         model = User
-        fields = ['first_name', 'last_name', 'account_name', 'username',
-                  'business_bio', 'call', 'whatsapp', 'account_bio', 'email']
+        fields = ['first_name', 'last_name', 'account_name', 'username', 'business_bio', 'call', 'call_iso_code',
+                  'call_dial_code', 'whatsapp', 'whatsapp_iso_code', 'whatsapp_dial_code', 'account_bio', 'email']
 
 
 class SwitchToBusinessAccountSerializer(serializers.ModelSerializer):
@@ -413,16 +426,20 @@ class SwitchToBusinessAccountSerializer(serializers.ModelSerializer):
     business_bio = serializers.CharField(max_length=30)
     call = serializers.CharField(max_length=17, validators=[RegexValidator(
         regex=r'^\+?1?\d{9,15}$', message="Phone number must be entered in the format: '+999999999'. Up to 15 digits allowed.")])
+    call_iso_code = serializers.CharField(max_length=10)
+    call_dial_code = serializers.CharField(max_length=10)
     whatsapp = serializers.CharField(max_length=17, required=False, validators=[RegexValidator(
         regex=r'^\+?1?\d{9,15}$', message="Phone number must be entered in the format: '+999999999'. Up to 15 digits allowed.")])
+    whatsapp_iso_code = serializers.CharField(max_length=10, required=False)
+    whatsapp_dial_code = serializers.CharField(max_length=10, required=False)
     account_bio = serializers.CharField(
         max_length=5000, allow_blank=True, required=False)
     email = serializers.EmailField(max_length=255, required=False)
 
     class Meta:
         model = User
-        fields = ['group', 'account_name', 'username',
-                  'business_bio', 'call', 'whatsapp', 'account_bio', 'email']
+        fields = ['group', 'account_name', 'username', 'business_bio', 'call', 'call_iso_code',
+                  'call_dial_code', 'whatsapp', 'whatsapp_iso_code', 'whatsapp_dial_code', 'account_bio', 'email']
 
 
 class ChangePasswordSerializer(serializers.Serializer):

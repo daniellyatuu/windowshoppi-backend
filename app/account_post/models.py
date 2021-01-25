@@ -20,7 +20,7 @@ class AccountPost(models.Model):
     longitude = models.FloatField(blank=True, null=True)
     active = models.BooleanField(default=True)
     error_happened_on_uploading_image = models.BooleanField(default=False)
-    url = models.URLField(max_length=200, blank=True, null=True)
+    url = models.URLField(max_length=800, blank=True, null=True)
     url_action_text = models.CharField(max_length=10, blank=True, null=True)
     is_url_valid = models.BooleanField(blank=True, null=True)
     date_posted = models.DateTimeField(auto_now_add=True)
