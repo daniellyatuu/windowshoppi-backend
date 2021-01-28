@@ -163,10 +163,7 @@ class AccountPostListView(generics.ListAPIView):
         current_time = timezone.now()
         time_diff = timedelta(minutes=40)
         time_range = current_time - time_diff
-
-        # queryset1 = AccountPost.objects.filter(
-        #     active=True, date_posted__gte=time_range)
-
+        
         # filter by year
         year = '2021'
 
@@ -177,11 +174,18 @@ class AccountPostListView(generics.ListAPIView):
 
         new_from_year = current_tz.localize(from_year)
 
-        queryset2 = AccountPost.objects.filter(
-            active=True, date_posted__gte=new_from_year).order_by('?')
+        queryset = AccountPost.objects.filter(
+            active=True, date_posted__gte=new_from_year)
 
-        # date_posted__gte=datetime.date(2021, 1, 1)
-
-        # result_queryset = list(chain(queryset1, queryset2))
-
-        return queryset2
+        queryset_count = queryset.count()
+        
+        post_count = int(self.request.GET.get('post_count', 0))
+        
+        if queryset_count == post_count:
+            # randomize posts
+            print('randomize')
+            return queryset.order_by('?')
+        else:
+            # descend posts
+            print('descend')
+            return queryset
