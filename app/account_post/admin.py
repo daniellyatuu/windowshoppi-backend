@@ -6,6 +6,12 @@ class AccountPostAdmin(admin.ModelAdmin):
     list_display = [
         'account',
         'caption',
+        'post_type',
+        'recommendation_name',
+        'recommendation_type',
+        'recommendation_phone_iso_code',
+        'recommendation_phone_dial_code',
+        'recommendation_phone_number',
         'url',
         'url_action_text',
         'is_url_valid',

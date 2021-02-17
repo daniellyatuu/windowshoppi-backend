@@ -20,8 +20,6 @@ class CreatePostView(APIView):
     authentication_classes = [TokenAuthentication]
     permission_classes = [IsAuthenticated,
                           IsWindowshopperOrVendorAccount, IsAccountBelongToMe]
-    # permission_classes = [IsAuthenticated,
-    #                       IsAllowedToPost, IsBussinessBelongToMe]
     parser_classes = (MultiPartParser, FormParser)
     serializer_class = CreatePostSerializer
 
@@ -29,11 +27,7 @@ class CreatePostView(APIView):
 
         data = self.request.data
 
-        # print(data)
-
         serializer = self.serializer_class(data=data)
-
-        print(serializer.is_valid)
 
         if serializer.is_valid():
             result = serializer.save()
@@ -163,7 +157,7 @@ class AccountPostListView(generics.ListAPIView):
         current_time = timezone.now()
         time_diff = timedelta(minutes=40)
         time_range = current_time - time_diff
-        
+
         # filter by year
         year = '2021'
 
@@ -178,9 +172,9 @@ class AccountPostListView(generics.ListAPIView):
             active=True, date_posted__gte=new_from_year)
 
         queryset_count = queryset.count()
-        
+
         post_count = int(self.request.GET.get('post_count', 0))
-        
+
         if queryset_count == post_count:
             # randomize posts
             print('randomize')

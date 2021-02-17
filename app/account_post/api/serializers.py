@@ -12,12 +12,23 @@ class CreatePostSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = AccountPost
-        fields = ['account', 'caption', 'url', 'url_action_text', 'location_name',
-                  'latitude', 'longitude', 'filename']
+        fields = ['account', 'caption', 'recommendation_name', 'recommendation_type', 'recommendation_phone_iso_code', 'recommendation_phone_dial_code',
+                  'recommendation_phone_number', 'url', 'url_action_text', 'location_name', 'latitude', 'longitude', 'filename', 'post_type']
 
     def create(self, validated_data):
         account = self.validated_data['account']
         caption = self.validated_data['caption']
+        recommendation_name = self.validated_data.get(
+            'recommendation_name', None)
+        recommendation_type = self.validated_data.get(
+            'recommendation_type', None)
+        recommendation_phone_iso_code = self.validated_data.get(
+            'recommendation_phone_iso_code', None)
+        recommendation_phone_dial_code = self.validated_data.get(
+            'recommendation_phone_dial_code', None)
+        recommendation_phone_number = self.validated_data.get(
+            'recommendation_phone_number', None)
+        post_type = self.validated_data.get('post_type', None)
         url = self.validated_data.get('url', None)
         url_action_text = self.validated_data.get('url_action_text', None)
         location_name = self.validated_data.get('location_name', None)
@@ -31,8 +42,8 @@ class CreatePostSerializer(serializers.ModelSerializer):
                 {'filename': ['exceeded the number of upload files']})
 
         # save post
-        windowshoppi_post = AccountPost.objects.create(
-            account=account, caption=caption, url=url, url_action_text=url_action_text, location_name=location_name, latitude=latitude, longitude=longitude)
+        windowshoppi_post = AccountPost.objects.create(account=account, caption=caption, recommendation_name=recommendation_name, recommendation_type=recommendation_type, recommendation_phone_iso_code=recommendation_phone_iso_code,
+                                                       recommendation_phone_dial_code=recommendation_phone_dial_code, recommendation_phone_number=recommendation_phone_number, url=url, url_action_text=url_action_text, location_name=location_name, latitude=latitude, longitude=longitude, post_type=post_type)
 
         try:
             for image in filename:
@@ -101,20 +112,26 @@ class PostImageSerializer(serializers.ModelSerializer):
 class AccountPostSerializer(serializers.ModelSerializer):
     post_photos = PostImageSerializer(many=True)
     username = serializers.CharField(source='account.user')
-    account_name = serializers.CharField(source='account.name')
+    # account_name = serializers.CharField(source='account.name')
     group = serializers.CharField(source='account.group')
-    account_bio = serializers.CharField(source='account.account_bio')
+    # account_bio = serializers.CharField(source='account.account_bio')
     business_bio = serializers.CharField(source='account.business_bio')
     account_profile = serializers.CharField(source='account.profile_photo')
-    call_number = serializers.CharField(
-        source='account.user.call_phone_number')
-    whatsapp_number = serializers.CharField(
-        source='account.user.whatsapp_phone_number')
+    recommendation_type = serializers.CharField(
+        source='get_recommendation_type_display')
+    post_type = serializers.CharField(source='get_post_type_display')
+    # call_number = serializers.CharField(
+    #     source='account.user.call_phone_number')
+    # whatsapp_number = serializers.CharField(
+    #     source='account.user.whatsapp_phone_number')
 
     class Meta:
         model = AccountPost
-        fields = ['id', 'account_id', 'username', 'account_name', 'group', 'account_bio', 'business_bio', 'account_profile',
-                  'categories', 'call_number', 'whatsapp_number', 'caption', 'url', 'url_action_text', 'is_url_valid', 'location_name', 'latitude', 'longitude', 'date_posted', 'post_photos']
+        # fields = ['id', 'account_id', 'username', 'account_name', 'group', 'account_bio', 'business_bio', 'account_profile',
+        #           'categories', 'call_number', 'whatsapp_number', 'caption', 'url', 'url_action_text', 'is_url_valid', 'location_name', 'latitude', 'longitude', 'date_posted', 'post_photos']
+
+        fields = ['id', 'account_id', 'username', 'group', 'business_bio', 'account_profile', 'caption', 'recommendation_name', 'recommendation_type', 'recommendation_phone_iso_code',
+                  'recommendation_phone_dial_code', 'recommendation_phone_number', 'url', 'url_action_text', 'is_url_valid', 'location_name', 'latitude', 'longitude', 'date_posted', 'post_photos', 'post_type']
 
 
 class BussinessPostSerializer(serializers.ModelSerializer):  # will be removed
