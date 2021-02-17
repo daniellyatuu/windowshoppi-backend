@@ -1,3 +1,4 @@
+from django.core.validators import RegexValidator
 from app.master_data.models import HashTag
 from app.account.models import Account
 from resizeimage import resizeimage
@@ -11,10 +12,34 @@ import os
 
 
 class AccountPost(models.Model):
+    phone_regex = RegexValidator(
+        regex=r'^\+?1?\d{8,15}$', message="Phone number must be entered in the format: '+999999999'. Up to 15 digits allowed.")
+
+    POST_TYPE_CHOICES = (
+        (1, 'normal-post'),
+        (2, 'recommendation'),
+    )
+
+    RECOMMENDATION_TYPE_CHOICES = (
+        (1, 'business'),
+        (2, 'product'),
+        (3, 'place'),
+    )
+
     account = models.ForeignKey(
         Account, related_name='account_posts', on_delete=models.CASCADE)
     categories = models.ManyToManyField(HashTag)
     caption = models.TextField()
+    recommendation_name = models.CharField(
+        max_length=255, blank=True, null=True)
+    recommendation_type = models.IntegerField(
+        blank=True, null=True, choices=RECOMMENDATION_TYPE_CHOICES)
+    recommendation_phone_number = models.CharField(
+        validators=[phone_regex], max_length=17, blank=True, null=True)
+    recommendation_phone_iso_code = models.CharField(
+        max_length=10, blank=True, null=True)
+    recommendation_phone_dial_code = models.CharField(
+        max_length=10, blank=True, null=True)
     location_name = models.CharField(max_length=255, blank=True, null=True)
     latitude = models.FloatField(blank=True, null=True)
     longitude = models.FloatField(blank=True, null=True)
@@ -23,6 +48,7 @@ class AccountPost(models.Model):
     url = models.URLField(max_length=800, blank=True, null=True)
     url_action_text = models.CharField(max_length=10, blank=True, null=True)
     is_url_valid = models.BooleanField(blank=True, null=True)
+    post_type = models.IntegerField(default=1, choices=POST_TYPE_CHOICES)
     date_posted = models.DateTimeField(auto_now_add=True)
     date_modified = models.DateTimeField(auto_now=True)
 
