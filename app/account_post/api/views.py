@@ -177,9 +177,7 @@ class AccountPostListView(generics.ListAPIView):
 
         if queryset_count == post_count:
             # randomize posts
-            print('randomize')
             return queryset.order_by('?')
         else:
             # descend posts
-            print('descend')
             return queryset

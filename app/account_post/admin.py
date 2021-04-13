@@ -19,7 +19,7 @@ class AccountPostAdmin(admin.ModelAdmin):
         'error_happened_on_uploading_image',
         'date_posted',
     ]
-
+    
     search_fields = [
         'account__name'
     ]
