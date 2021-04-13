@@ -10,4 +10,8 @@ urlpatterns = [
          name='update_profile_picture'),
     path('remove-profile-picture/<int:account_id>/<int:contact_id>/', views.RemoveProfilePictureView.as_view(),
          name='remove_profile_picture'),
+    path('follow/', views.FollowAccountView.as_view(), name='follow_account'),
+    path('unfollow/', views.UnFollowAccountView.as_view(), name='unfollow_account'),
+    path('follower-number/<int:pk>/',
+         views.FollowerNoFollowingNoPostNoAccountView.as_view(), name='follower_number'),
 ]

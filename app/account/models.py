@@ -1,6 +1,8 @@
+from django.db.models.signals import post_save, post_delete
 from windowshoppi.settings.base import MEDIA_URL
 from django.contrib.auth.models import Group
 from app.master_data.models import HashTag
+from django.dispatch import receiver
 from app.user.models import User
 from django.db import models
 
@@ -34,3 +36,32 @@ class Account(models.Model):
     def profile_photo(self):
         if(self.profile_image):
             return MEDIA_URL + str(self.profile_image)
+
+    def account_post(self):
+        return self.account_posts.filter(active=True)
+
+    def account_post_no(self):
+        return self.account_post().count()
+
+
+class Follow(models.Model):
+    follower = models.ForeignKey(
+        Account, on_delete=models.CASCADE, related_name='follower')
+    following = models.ForeignKey(
+        Account, on_delete=models.CASCADE, related_name='following')
+    date_followed = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        db_table = 'follow'
+        ordering = ['-id']
+
+
+@receiver(post_save, sender=Follow)
+def account_follow(sender, instance, *args, **kwargs):
+    follow = instance
+    sender = follow.follower
+    following = follow.following
+    # print(sender)
+    # print(following)
+    print(sender, 'start follow ', following)
+    print('notify user about the follow')

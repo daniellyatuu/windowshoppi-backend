@@ -1,8 +1,7 @@
 from app.account_post.account_post_background_tasks import verify_url
 from app.account_post.models import AccountPost, PostImage
-from rest_framework import serializers
+from rest_framework import serializers, status
 from app.account.models import Account
-from rest_framework import status
 from django.utils import timezone
 
 
@@ -112,24 +111,15 @@ class PostImageSerializer(serializers.ModelSerializer):
 class AccountPostSerializer(serializers.ModelSerializer):
     post_photos = PostImageSerializer(many=True)
     username = serializers.CharField(source='account.user')
-    # account_name = serializers.CharField(source='account.name')
     group = serializers.CharField(source='account.group')
-    # account_bio = serializers.CharField(source='account.account_bio')
     business_bio = serializers.CharField(source='account.business_bio')
     account_profile = serializers.CharField(source='account.profile_photo')
     recommendation_type = serializers.CharField(
         source='get_recommendation_type_display')
     post_type = serializers.CharField(source='get_post_type_display')
-    # call_number = serializers.CharField(
-    #     source='account.user.call_phone_number')
-    # whatsapp_number = serializers.CharField(
-    #     source='account.user.whatsapp_phone_number')
 
     class Meta:
         model = AccountPost
-        # fields = ['id', 'account_id', 'username', 'account_name', 'group', 'account_bio', 'business_bio', 'account_profile',
-        #           'categories', 'call_number', 'whatsapp_number', 'caption', 'url', 'url_action_text', 'is_url_valid', 'location_name', 'latitude', 'longitude', 'date_posted', 'post_photos']
-
         fields = ['id', 'account_id', 'username', 'group', 'business_bio', 'account_profile', 'caption', 'recommendation_name', 'recommendation_type', 'recommendation_phone_iso_code',
                   'recommendation_phone_dial_code', 'recommendation_phone_number', 'url', 'url_action_text', 'is_url_valid', 'location_name', 'latitude', 'longitude', 'date_posted', 'post_photos', 'post_type']
 

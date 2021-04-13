@@ -1,3 +1,4 @@
+from .serializers import AccountSerializer, FollowAccountSerializer, UnFollowAccountSerializer
 from windowshoppi.api_permissions.permissions import IsAccountBelongToMe, IsContactBelongToMe
 from windowshoppi.pagination import StandardResultsSetLimitOffset
 from rest_framework.parsers import MultiPartParser, FormParser
@@ -6,11 +7,10 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.exceptions import ValidationError
 from windowshoppi.settings.base import MEDIA_URL
 from django.shortcuts import get_object_or_404
+from app.account.models import Account, Follow
 from rest_framework.response import Response
 from rest_framework import status, generics
-from .serializers import AccountSerializer
 from rest_framework.views import APIView
-from app.account.models import Account
 from resizeimage import resizeimage
 from app.user.models import Contact
 from django.core.files import File
@@ -184,3 +184,67 @@ class RemoveProfilePictureView(APIView):
             'date_registered': account.date_registered,
         }
         return Response(result)
+
+
+class FollowAccountView(APIView):
+    authentication_classes = [TokenAuthentication]
+    permission_classes = [IsAuthenticated, IsAccountBelongToMe]
+    serializer_class = FollowAccountSerializer
+
+    def post(self, request, *args, **kwargs):
+        data = self.request.data
+
+        serializer = self.serializer_class(data=data)
+
+        if serializer.is_valid():
+            response = serializer.save()
+
+            if(response):
+                return Response(response, status=status.HTTP_201_CREATED)
+            return Response(response, status=status.HTTP_200_OK)
+
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+class UnFollowAccountView(APIView):
+    authentication_classes = [TokenAuthentication]
+    permission_classes = [IsAuthenticated]
+    serializer_class = UnFollowAccountSerializer
+
+    def post(self, request, *args, **kwargs):
+
+        data = self.request.data
+
+        serializer = self.serializer_class(data=data)
+
+        if serializer.is_valid():
+            response = serializer.save()
+            return Response(response, status=status.HTTP_200_OK)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+class FollowerNoFollowingNoPostNoAccountView(APIView):
+
+    def get_queryset(self):
+        pk = self.kwargs['pk']
+        obj = get_object_or_404(Account, pk=pk)
+        return obj
+
+    def get(self, request, *args, **kwargs):
+
+        account = self.get_queryset()
+
+        follow = Follow.objects.filter(
+            Q(follower=account) | Q(following=account))
+
+        followers_no = follow.filter(following=account).count()
+        following_no = follow.filter(follower=account).count()
+        post_no = account.account_post_no()
+
+        data = {
+            'follower_number': followers_no,
+            'following_number': following_no,
+            'post_number': post_no
+        }
+
+        return Response(data)

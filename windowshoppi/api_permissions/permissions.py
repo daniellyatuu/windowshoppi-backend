@@ -91,13 +91,16 @@ class IsAccountBelongToMe(BasePermission):
 
     def has_permission(self, request, view):
 
-        if 'account_id' in view.kwargs:
-            pk = view.kwargs['account_id']
-        else:
-            pk = int(request.data['account'])
-
         try:
+            if 'account_id' in view.kwargs:
+                pk = view.kwargs['account_id']
+            elif 'following' in request.data:
+                pk = int(request.data['following'])
+            elif 'account' in request.data:
+                pk = int(request.data['account'])
+
             account = Account.objects.get(id=pk)
+
         except:
             return Response()
 

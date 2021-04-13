@@ -154,13 +154,13 @@ GS_CREDENTIALS = service_account.Credentials.from_service_account_file(
 # configuration for media file storing and retriving from google-cloud
 DEFAULT_FILE_STORAGE = 'windowshoppi.gcloud.GoogleCloudMediaFileStorage'
 
-# for production
-GS_BUCKET_NAME = 'windowshoppi_media'
-GS_PROJECT_ID = 'windowshoppi'
+# # for production
+# GS_BUCKET_NAME = 'windowshoppi_media'
+# GS_PROJECT_ID = 'windowshoppi'
 
-# # for development
-# GS_BUCKET_NAME = 'windowshoppi_post_pictures'
-# GS_PROJECT_ID = 'location-1549615378220'
+# for development
+GS_BUCKET_NAME = 'windowshoppi_post_pictures'
+GS_PROJECT_ID = 'location-1549615378220'
 
 
 MEDIA_URL = 'https://storage.googleapis.com/{}/'.format(
